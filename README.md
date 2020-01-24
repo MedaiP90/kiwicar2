@@ -4,7 +4,7 @@ Applicazione per visualizzazione di cataloghi di automobili costruita su framewo
 
 ## Dipendenze
 
-Per poter lavorare al progetto occore installare alcune dipendenza:
+Per poter lavorare al progetto occore installare alcune dipendenze:
 - [node](https://nodejs.org/it/download/);
 - [npm](https://www.npmjs.com/get-npm);
 - [ionic](https://ionicframework.com/docs/installation/cli);
