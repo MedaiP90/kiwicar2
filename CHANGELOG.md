@@ -7,9 +7,11 @@
 - Updated `config.xml`
 - Status bar restyle
 - First run fixes
+- Reorganized folders
 
 ### Added
 - Initialized the _Ionic_ project
 - Added `README.md` and `CHANGELOG.md` files
 - Generated resources for android
 - Added translations
+- Added back navigation capabilities

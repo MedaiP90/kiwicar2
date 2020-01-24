@@ -1,11 +1,13 @@
 import { Component, OnInit } from '@angular/core';
+import { AbstractBackNavigationPage } from 'src/app/utils/abstract-back-navigation';
+import { BackNavigationService } from 'src/app/services/back-navigation.service';
 
 @Component({
   selector: 'app-list',
   templateUrl: 'list.page.html',
   styleUrls: ['list.page.scss']
 })
-export class ListPage implements OnInit {
+export class ListPage extends AbstractBackNavigationPage implements OnInit {
   private selectedItem: any;
   private icons = [
     'flask',
@@ -20,7 +22,9 @@ export class ListPage implements OnInit {
     'build'
   ];
   public items: Array<{ title: string; note: string; icon: string }> = [];
-  constructor() {
+  constructor(backNavigationService: BackNavigationService) {
+    super(backNavigationService, { toHome: true, inRoot: false });
+
     for (let i = 1; i < 11; i++) {
       this.items.push({
         title: 'Item ' + i,
@@ -32,8 +36,4 @@ export class ListPage implements OnInit {
 
   ngOnInit() {
   }
-  // add back when alpha.4 is out
-  // navigate(item) {
-  //   this.router.navigate(['/list', JSON.stringify(item)]);
-  // }
 }
