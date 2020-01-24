@@ -23,4 +23,5 @@ Per lanciare il progetto in modalità sviluppo (testare funzionalità o modifich
 
 ### Modalità produzione
 
-// TODO: aggiornare questa sezione
+È sufficiente lanciare il seguente comando:
+`ionic cordova build android`
