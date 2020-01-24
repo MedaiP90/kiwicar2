@@ -8,6 +8,8 @@ Per poter lavorare al progetto occore installare alcune dipendenza:
 - [node](https://nodejs.org/it/download/);
 - [npm](https://www.npmjs.com/get-npm);
 - [ionic](https://ionicframework.com/docs/installation/cli);
+- java 8;
+- android sdk.
 
 ## Lanciare il progetto
 
