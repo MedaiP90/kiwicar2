@@ -6,6 +6,7 @@ import { RouterModule } from '@angular/router';
 import { TranslateModule } from '@ngx-translate/core';
 
 import { HomePage } from './home.page';
+import { PopoverComponent } from '../popover/popover.component';
 
 @NgModule({
   imports: [
@@ -20,6 +21,7 @@ import { HomePage } from './home.page';
       }
     ])
   ],
-  declarations: [HomePage]
+  declarations: [HomePage, PopoverComponent],
+  entryComponents: [PopoverComponent]
 })
 export class HomePageModule {}

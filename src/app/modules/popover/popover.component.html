@@ -1,0 +1,16 @@
+<ion-card-header color="primary">
+  <ion-card-title>{{ 'APP.search' | translate }}</ion-card-title>
+</ion-card-header>
+
+<ion-list>
+  <ion-item lines="none">
+    <ion-label>Test</ion-label>
+  </ion-item>
+</ion-list>
+
+<ion-item lines="none">
+  <ion-buttons slot="end">
+    <ion-button (click)="dismissPopover(false)" fill="clear" size="medium" color="primary">{{ 'APP.save' | translate }}</ion-button>
+    <ion-button (click)="dismissPopover(true)" fill="clear" size="medium" color="primary">{{ 'APP.start' | translate }}</ion-button>
+  </ion-buttons>
+</ion-item>

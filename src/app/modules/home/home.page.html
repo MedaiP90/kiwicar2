@@ -6,9 +6,30 @@
     <ion-title>
       {{ 'APP.app-name' | translate }}
     </ion-title>
+    <ion-buttons slot="end">
+      <ion-button shape="round" (click)="presentPopover()">
+        <ion-icon name="search"></ion-icon>
+      </ion-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  
+  <div class="padding">
+    <ion-card *ngFor="let manufacturer of mockup">
+      <ion-card-header color="primary">
+        <ion-card-title>
+          {{ manufacturer.name }}
+        </ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <ion-item lines="none">
+          <img slot="start" class="thumbnail" [src]="manufacturer.logo" />
+          <ion-label>
+            {{ 'HOME.amount' | translate }}: <b>{{ manufacturer.modelsAmount }}</b>
+          </ion-label>
+        </ion-item>
+      </ion-card-content>
+    </ion-card>
+  </div>
 </ion-content>

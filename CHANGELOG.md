@@ -9,6 +9,7 @@
 - First run fixes
 - Reorganized folders
 - Disabled spinner on splash screen
+- Home preview with mockup data
 
 ### Added
 - Initialized the _Ionic_ project
@@ -17,3 +18,7 @@
 - Added translations
 - Added back navigation capabilities
 - Added app version info
+- Added `favorites.page`
+- Added `searches.page`
+- Added `search.component` popover
+- Added mockup data
