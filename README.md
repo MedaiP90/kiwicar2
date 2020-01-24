@@ -11,6 +11,8 @@ Per poter lavorare al progetto occore installare alcune dipendenza:
 
 ## Lanciare il progetto
 
+Preventivamente è sempre consigliato eseguire il comando `npm install` per soddisfare eventuali dipendenze aggiunte in fase di sviluppo.
+
 ### Modalità sviluppo
 
 Per lanciare il progetto in modalità sviluppo (testare funzionalità o modifiche, individuare bug) è possibile eseguire due tipi di comando:

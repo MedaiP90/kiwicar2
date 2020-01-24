@@ -3,6 +3,7 @@
 ## [Unreleased]
 
 ### Changed
+- Updated `README.md`
 
 ### Added
 - Initialized the _Ionic_ project
