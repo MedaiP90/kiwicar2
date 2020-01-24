@@ -16,3 +16,4 @@
 - Generated resources for android
 - Added translations
 - Added back navigation capabilities
+- Added app version info

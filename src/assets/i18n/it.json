@@ -4,6 +4,13 @@
         "close-title": "Uscire da KiwiCar?",
         "close": "Chiudi KiwiCar",
         "cancel": "Annulla",
-        "sure-to-close": "Sei sicuro di voler uscire dall'app?"
+        "sure-to-close": "Sei sicuro di voler uscire dall'app?",
+        "version": "Versione"
+    },
+    "MENU": {
+        "title": "Menu",
+        "home": "Home",
+        "favorites": "Preferiti",
+        "saved-searches": "Ricerche salvate"
     }
 }
