@@ -8,6 +8,7 @@
 - Status bar restyle
 - First run fixes
 - Reorganized folders
+- Disabled spinner on splash screen
 
 ### Added
 - Initialized the _Ionic_ project
