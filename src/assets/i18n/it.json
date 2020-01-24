@@ -7,6 +7,12 @@
         "sure-to-close": "Sei sicuro di voler uscire dall'app?",
         "version": "Versione"
     },
+    "FAVORITES": {
+        "title": "Preferiti"
+    },
+    "SEARCHES": {
+        "title": "Ricerche salvate"
+    },
     "MENU": {
         "title": "Menu",
         "home": "Home",
