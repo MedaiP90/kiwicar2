@@ -12,3 +12,4 @@
 - Initialized the _Ionic_ project
 - Added `README.md` and `CHANGELOG.md` files
 - Generated resources for android
+- Added translations

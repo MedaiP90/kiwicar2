@@ -1,3 +1,5 @@
 {
-    "app-name": "KiwiCar"
+    "APP": {
+        "app-name": "KiwiCar"
+    }
 }
