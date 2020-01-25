@@ -10,21 +10,28 @@
         "save": "Salva",
         "start": "Avvia"
     },
+    "ALL_MODELS": {
+        "title": "Tutti i modelli"
+    },
     "HOME": {
-        "amount": "Modelli disponibili",
-        "search-tooltip": "Esegui una ricerca"
+        "amount": "Modelli disponibili"
     },
     "FAVORITES": {
         "title": "Preferiti"
+    },
+    "SEARCH": {
+        "title": "Ricerca",
+        "saved": "Ricerca salvata",
+        "not-saved": "Ricerca non salvata"
     },
     "SEARCHES": {
         "title": "Ricerche salvate"
     },
     "MENU": {
         "title": "Menu",
-        "tooltip": "Apri menu di navigazione",
         "home": "Home",
         "favorites": "Preferiti",
-        "saved-searches": "Ricerche salvate"
+        "saved-searches": "Ricerche salvate",
+        "models-comparison": "Modelli e confronti"
     }
 }

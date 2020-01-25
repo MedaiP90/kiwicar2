@@ -22,3 +22,8 @@
 - Added `searches.page`
 - Added `search.component` popover
 - Added mockup data
+- Added data sevice
+- Added `search.page`
+- Added `all-models.page`
+- Added some data interfaces
+- Added `models.page`

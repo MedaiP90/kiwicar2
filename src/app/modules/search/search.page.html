@@ -1,0 +1,23 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>{{ 'SEARCH.title' | translate }}</ion-title>
+    <ion-buttons slot="end">
+      <ion-button shape="round" (click)="onSaveClick()">
+        <ion-icon name="save"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="padding">
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title>{{ query }}</ion-card-title>
+      </ion-card-header>
+    </ion-card>
+  </div>
+</ion-content>

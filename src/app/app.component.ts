@@ -19,6 +19,11 @@ export class AppComponent implements OnInit {
       icon: 'home'
     },
     {
+      title: 'MENU.models-comparison',
+      url: '/all-models',
+      icon: 'checkmark-circle'
+    },
+    {
       title: 'MENU.favorites',
       url: '/favorites',
       icon: 'star'

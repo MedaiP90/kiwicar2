@@ -16,13 +16,13 @@
 
 <ion-content>
   <div class="padding">
-    <ion-card *ngFor="let manufacturer of mockup">
-      <ion-card-header color="primary">
+    <ion-card *ngFor="let manufacturer of manufacturers">
+      <ion-card-header color="primary" (click)="openManufacturer(manufacturer.name)">
         <ion-card-title>
           {{ manufacturer.name }}
         </ion-card-title>
       </ion-card-header>
-      <ion-card-content>
+      <ion-card-content (click)="openManufacturer(manufacturer.name)">
         <ion-item lines="none">
           <img slot="start" class="thumbnail" [src]="manufacturer.logo" />
           <ion-label>
