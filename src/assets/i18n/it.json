@@ -11,7 +11,9 @@
         "start": "Avvia"
     },
     "ALL_MODELS": {
-        "title": "Tutti i modelli"
+        "title": "Tutti i modelli",
+        "model-search": "Cerca un modello",
+        "filter": "Filtro"
     },
     "HOME": {
         "amount": "Modelli disponibili"

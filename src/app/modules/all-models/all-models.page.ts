@@ -9,10 +9,13 @@ import { BackNavigationService } from '../../services/back-navigation.service';
 })
 export class AllModelsPage extends AbstractBackNavigationPage implements OnInit {
 
+  public textFilter: string;
+
   constructor(
     backNavigationService: BackNavigationService
   ) {
     super(backNavigationService, { toHome: true, inRoot: false });
+    this.textFilter = '';
   }
 
   ngOnInit() {

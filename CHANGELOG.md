@@ -27,3 +27,4 @@
 - Added `all-models.page`
 - Added some data interfaces
 - Added `models.page`
+- Added search bar in the all models page

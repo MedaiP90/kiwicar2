@@ -4,9 +4,30 @@
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
     <ion-title>{{ 'ALL_MODELS.title' | translate }}</ion-title>
+    <ion-buttons slot="end">
+      <ion-button shape="round">
+        <ion-icon name="git-compare"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+  <ion-toolbar>
+    <ion-searchbar
+      [(ngModel)]="textFilter"
+      placeholder="{{ 'ALL_MODELS.model-search' | translate }}"
+      animated
+      mode="ios"
+    ></ion-searchbar>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-
+  <div class="padding">
+    <ion-card *ngIf="textFilter !== ''">
+      <ion-card-header>
+        <ion-card-title>
+          {{ 'ALL_MODELS.filter' | translate }}: {{ textFilter }}
+        </ion-card-title>
+      </ion-card-header>
+    </ion-card>
+  </div>
 </ion-content>
