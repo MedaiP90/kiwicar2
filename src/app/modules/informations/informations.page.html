@@ -15,20 +15,14 @@
           {{ 'APP.app-name' | translate }} {{ 'INFORMATIONS.version' | translate }}{{ version }}
         </ion-card-title>
       </ion-card-header>
-      <ion-card-content>
-        <ion-list>
-          <ion-item lines="none">
-            <ion-label>
-              ciao
-            </ion-label>
-          </ion-item>
-          <ion-item lines="none">
-            <ion-label>
-              ciao
-            </ion-label>
-          </ion-item>
-        </ion-list>
-      </ion-card-content>
     </ion-card>
   </div>
 </ion-content>
+
+<ion-footer text-center>
+  <ion-list>
+    <ion-label disabled="true" lines="none">
+      &copy; Copyright {{ copyrightTime }}, CoMa Softwares
+    </ion-label>
+  </ion-list>
+</ion-footer>

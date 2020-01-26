@@ -10,6 +10,7 @@
 - Reorganized folders
 - Disabled spinner on splash screen
 - Home preview with mockup data
+- Updated app informations with copyright claim
 
 ### Added
 - Initialized the _Ionic_ project
@@ -32,3 +33,4 @@
 - Added logic for models fetch
 - Added `informations-page`
 - Added `comparisons.page`
+- Added "moment" support
