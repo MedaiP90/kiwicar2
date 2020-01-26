@@ -15,6 +15,9 @@
         "model-search": "Cerca un modello",
         "filter": "Filtro"
     },
+    "COMPARISONS": {
+        "title": "Confronti"
+    },
     "INFORMATIONS": {
         "title": "Informazioni",
         "version": "v"

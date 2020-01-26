@@ -30,6 +30,10 @@ const routes: Routes = [
   {
     path: 'informations',
     loadChildren: () => import('./modules/informations/informations.module').then( m => m.InformationsPageModule)
+  },
+  {
+    path: 'comparisons',
+    loadChildren: () => import('./modules/comparisons/comparisons.module').then( m => m.ComparisonsPageModule)
   }
 ];
 

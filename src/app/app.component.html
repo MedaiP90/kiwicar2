@@ -19,6 +19,14 @@
               </ion-label>
             </ion-item>
           </ion-menu-toggle>
+          <ion-menu-toggle auto-hide="false">
+            <ion-item [routerLink]="['/comparisons']" lines="none">
+              <ion-icon slot="start" name="git-compare"></ion-icon>
+              <ion-label>
+                {{ 'MENU.comparisons' | translate }}
+              </ion-label>
+            </ion-item>
+          </ion-menu-toggle>
           <ion-item-divider mode="ios"></ion-item-divider>
           <ion-menu-toggle auto-hide="false">
             <ion-item [routerLink]="['/informations']" lines="none">

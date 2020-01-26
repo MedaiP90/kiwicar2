@@ -31,11 +31,6 @@ export class AppComponent {
       title: 'MENU.saved-searches',
       url: '/searches',
       icon: 'bookmark'
-    },
-    {
-      title: 'MENU.comparisons',
-      url: '/comparisons',
-      icon: 'git-compare'
     }
   ];
 

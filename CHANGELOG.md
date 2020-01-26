@@ -31,3 +31,4 @@
 - Added `ItemModel` component
 - Added logic for models fetch
 - Added `informations-page`
+- Added `comparisons.page`
