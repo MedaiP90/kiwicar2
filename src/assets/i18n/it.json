@@ -5,15 +5,19 @@
         "close": "Chiudi KiwiCar",
         "cancel": "Annulla",
         "sure-to-close": "Sei sicuro di voler uscire dall'app?",
-        "version": "Versione",
         "search": "Ricerca",
         "save": "Salva",
-        "start": "Avvia"
+        "start": "Avvia",
+        "fuel": "Alimentazione"
     },
     "ALL_MODELS": {
         "title": "Tutti i modelli",
         "model-search": "Cerca un modello",
         "filter": "Filtro"
+    },
+    "INFORMATIONS": {
+        "title": "Informazioni",
+        "version": "v"
     },
     "HOME": {
         "amount": "Modelli disponibili"
@@ -34,6 +38,8 @@
         "home": "Home",
         "favorites": "Preferiti",
         "saved-searches": "Ricerche salvate",
-        "models-comparison": "Modelli e confronti"
+        "models-comparison": "Tutti i modelli",
+        "comparisons": "Confronti",
+        "informations": "Informazioni"
     }
 }

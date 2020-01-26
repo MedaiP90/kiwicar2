@@ -8,5 +8,13 @@
 </ion-header>
 
 <ion-content>
-
+  <div class="padding">
+    <app-item-model
+      *ngFor="let model of models"
+      [title]="model.name"
+      [img]="model.images[0]"
+      [manufacturer]="model.manufacturer"
+      [fuel]="model.data"
+    ></app-item-model>
+  </div>
 </ion-content>

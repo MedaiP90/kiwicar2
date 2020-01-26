@@ -28,3 +28,6 @@
 - Added some data interfaces
 - Added `models.page`
 - Added search bar in the all models page
+- Added `ItemModel` component
+- Added logic for models fetch
+- Added `informations-page`

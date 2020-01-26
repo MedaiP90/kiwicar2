@@ -39,7 +39,7 @@ export class HomePage extends AbstractBackNavigationPage implements OnInit {
 
   public async openManufacturer(manufacturer: string) {
     this.dataFetchService.setSelectedManufacturer(manufacturer);
-    await this.router.navigate(['models']);
+    await this.router.navigate(['models', 'models']);
   }
 
 }

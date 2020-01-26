@@ -1,0 +1,17 @@
+<ion-card>
+  <ion-card-header>
+    <ion-card-title>
+      {{ manufacturer }} {{ title }}
+    </ion-card-title>
+  </ion-card-header>
+  <ion-card-content>
+    <ion-item class="item-data" lines="none">
+      <ion-thumbnail slot="start">
+        <img [src]="img" />
+      </ion-thumbnail>
+      <ion-label>
+        {{ 'APP.fuel' | translate }}: <b>{{ fuel }}</b>
+      </ion-label>
+    </ion-item>
+  </ion-card-content>
+</ion-card>

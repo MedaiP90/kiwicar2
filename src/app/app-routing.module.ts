@@ -24,12 +24,12 @@ const routes: Routes = [
     loadChildren: () => import('./modules/search/search.module').then( m => m.SearchPageModule)
   },
   {
-    path: 'all-models',
-    loadChildren: () => import('./modules/all-models/all-models.module').then( m => m.AllModelsPageModule)
+    path: 'models',
+    loadChildren: () => import('./modules/models-module/models.module').then( m => m.ModelsPageModule)
   },
   {
-    path: 'models',
-    loadChildren: () => import('./modules/models/models.module').then( m => m.ModelsPageModule)
+    path: 'informations',
+    loadChildren: () => import('./modules/informations/informations.module').then( m => m.InformationsPageModule)
   }
 ];
 

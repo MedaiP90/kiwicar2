@@ -1,13 +1,13 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { TranslateModule } from '@ngx-translate/core';
 
 import { IonicModule } from '@ionic/angular';
 
-import { ModelsPageRoutingModule } from './models-routing.module';
+import { InformationsPageRoutingModule } from './informations-routing.module';
 
-import { ModelsPage } from './models.page';
+import { InformationsPage } from './informations.page';
+import { TranslateModule } from '@ngx-translate/core';
 
 @NgModule({
   imports: [
@@ -15,8 +15,8 @@ import { ModelsPage } from './models.page';
     FormsModule,
     IonicModule,
     TranslateModule.forChild(),
-    ModelsPageRoutingModule
+    InformationsPageRoutingModule
   ],
-  declarations: [ModelsPage]
+  declarations: [InformationsPage]
 })
-export class ModelsPageModule {}
+export class InformationsPageModule {}

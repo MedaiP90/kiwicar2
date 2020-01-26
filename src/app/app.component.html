@@ -2,7 +2,7 @@
   <ion-split-pane contentId="main-content">
     <ion-menu contentId="main-content" type="overlay">
       <ion-header>
-        <ion-toolbar color="primary">
+        <ion-toolbar>
           <ion-title>{{ 'MENU.title' | translate }}</ion-title>
           <ion-button (click)="closeMenu()" slot="end" fill="clear" shape="round">
             <ion-icon name="close" color="light" slot="icon-only"></ion-icon>
@@ -19,10 +19,15 @@
               </ion-label>
             </ion-item>
           </ion-menu-toggle>
-          <ion-item-divider mode="ios" id="divider"></ion-item-divider>
-          <ion-item lines="none" disabled="true">
-            <ion-label>{{ 'APP.version' | translate }} {{ version }}</ion-label>
-          </ion-item>
+          <ion-item-divider mode="ios"></ion-item-divider>
+          <ion-menu-toggle auto-hide="false">
+            <ion-item [routerLink]="['/informations']" lines="none">
+              <ion-icon slot="start" name="information-circle-outline"></ion-icon>
+              <ion-label>
+                {{ 'MENU.informations' | translate }}
+              </ion-label>
+            </ion-item>
+          </ion-menu-toggle>
         </ion-list>
       </ion-content>
     </ion-menu>

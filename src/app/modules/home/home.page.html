@@ -17,14 +17,16 @@
 <ion-content>
   <div class="padding">
     <ion-card *ngFor="let manufacturer of manufacturers">
-      <ion-card-header color="primary" (click)="openManufacturer(manufacturer.name)">
+      <ion-card-header (click)="openManufacturer(manufacturer.name)">
         <ion-card-title>
           {{ manufacturer.name }}
         </ion-card-title>
       </ion-card-header>
       <ion-card-content (click)="openManufacturer(manufacturer.name)">
-        <ion-item lines="none">
-          <img slot="start" class="thumbnail" [src]="manufacturer.logo" />
+        <ion-item class="item-data" lines="none">
+          <ion-thumbnail slot="start">
+            <img [src]="manufacturer.logo" />
+          </ion-thumbnail>
           <ion-label>
             {{ 'HOME.amount' | translate }}: <b>{{ manufacturer.modelsAmount }}</b>
           </ion-label>
