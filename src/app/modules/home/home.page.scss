@@ -1,2 +1,37 @@
 @import "../../app.component.scss";
 @import "~@ionic/angular/css/core.css";
+
+ion-card {
+    margin-bottom: 1.5em;
+    --background: var(--ion-color-primary-contrast);
+    border-radius: 15px;
+    box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0);
+
+    ion-card-header {
+        background-color: var(--dark-color-dark-contrast);
+
+        ion-card-title {
+            color: var(--dark-color-dark);
+        }
+    }
+
+    ion-card-content {
+        padding: 0;
+        color: var(--dark-color-dark);
+        margin-bottom: 1.2em;
+    }
+
+    ion-thumbnail {
+        height: 12vh;
+        width: 12vh;
+        margin-right: 1em;
+        padding: 0;
+    
+        img {
+            width: 100%;
+            height: auto;
+            margin-top: 50%;
+            transform: translateY(-50%);
+        }
+    }
+}

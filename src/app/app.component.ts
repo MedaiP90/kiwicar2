@@ -47,7 +47,7 @@ export class AppComponent {
   private initializeApp(): void {
     this.platform.ready().then(() => {
       this.statusBar.overlaysWebView(false);
-      this.statusBar.backgroundColorByHexString('#222428');
+      this.statusBar.backgroundColorByHexString('#9C9EA3');
       this.statusBar.styleBlackOpaque();
 
       // Translate

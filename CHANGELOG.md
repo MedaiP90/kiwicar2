@@ -11,6 +11,7 @@
 - Disabled spinner on splash screen
 - Home preview with mockup data
 - Updated app informations with copyright claim
+- Restyled the app theme
 
 ### Added
 - Initialized the _Ionic_ project

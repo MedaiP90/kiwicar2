@@ -1,9 +1,9 @@
-<ion-header>
+<ion-header mode="ios" translucent="true" no-border no-shadow>
   <ion-toolbar>
     <ion-buttons slot="start">
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
-    <ion-title>
+    <ion-title class="home-title">
       {{ 'APP.app-name' | translate }}
     </ion-title>
     <ion-buttons slot="end">
@@ -14,15 +14,15 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content fullscreen="true">
   <div class="padding">
-    <ion-card *ngFor="let manufacturer of manufacturers">
-      <ion-card-header (click)="openManufacturer(manufacturer.name)">
+    <ion-card *ngFor="let manufacturer of manufacturers" (click)="openManufacturer(manufacturer.name)">
+      <ion-card-header>
         <ion-card-title>
           {{ manufacturer.name }}
         </ion-card-title>
       </ion-card-header>
-      <ion-card-content (click)="openManufacturer(manufacturer.name)">
+      <ion-card-content>
         <ion-item class="item-data" lines="none">
           <ion-thumbnail slot="start">
             <img [src]="manufacturer.logo" />

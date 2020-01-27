@@ -1,2 +1,7 @@
 @import "../../app.component.scss";
 @import "~@ionic/angular/css/core.css";
+
+.copyright {
+    background-color: var(--dark-color-dark-tint);
+    color: var(--dark-color-dark-contrast);
+}

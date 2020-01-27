@@ -18,12 +18,12 @@
   --dark-color-secondary-shade: #7484a2;
   --dark-color-secondary-tint: #90a1bf;
 
-  --dark-color-tertiary: #243B51;
-  --dark-color-tertiary-rgb: 36,59,81;
+  --dark-color-tertiary: #3880ff;
+  --dark-color-tertiary-rgb: 56,128,255;
   --dark-color-tertiary-contrast: #ffffff;
   --dark-color-tertiary-contrast-rgb: 255,255,255;
-  --dark-color-tertiary-shade: #203447;
-  --dark-color-tertiary-tint: #3a4f62;
+  --dark-color-tertiary-shade: #3171e0;
+  --dark-color-tertiary-tint: #4c8dff;
 
   --dark-color-success: #10dc60;
   --dark-color-success-rgb: 16,220,96;
@@ -67,72 +67,8 @@
   --dark-color-light-shade: #898b8f;
   --dark-color-light-tint: #a6a8ac;
 
-  /** Custom CSS Variables light theme **/
-  --light-color-primary: #F3A411;
-  --light-color-primary-rgb: 243,164,17;
-  --light-color-primary-contrast: #000000;
-  --light-color-primary-contrast-rgb: 0,0,0;
-  --light-color-primary-shade: #d6900f;
-  --light-color-primary-tint: #f4ad29;
-
-  --light-color-secondary: #976F27;
-  --light-color-secondary-rgb: 151,111,39;
-  --light-color-secondary-contrast: #ffffff;
-  --light-color-secondary-contrast-rgb: 255,255,255;
-  --light-color-secondary-shade: #856222;
-  --light-color-secondary-tint: #a17d3d;
-
-  --light-color-tertiary: #62605D;
-  --light-color-tertiary-rgb: 98,96,93;
-  --light-color-tertiary-contrast: #ffffff;
-  --light-color-tertiary-contrast-rgb: 255,255,255;
-  --light-color-tertiary-shade: #565452;
-  --light-color-tertiary-tint: #72706d;
-
-  --light-color-success: #10dc60;
-  --light-color-success-rgb: 16,220,96;
-  --light-color-success-contrast: #ffffff;
-  --light-color-success-contrast-rgb: 255,255,255;
-  --light-color-success-shade: #0ec254;
-  --light-color-success-tint: #28e070;
-
-  --light-color-warning: #ffce00;
-  --light-color-warning-rgb: 255,206,0;
-  --light-color-warning-contrast: #ffffff;
-  --light-color-warning-contrast-rgb: 255,255,255;
-  --light-color-warning-shade: #e0b500;
-  --light-color-warning-tint: #ffd31a;
-
-  --light-color-danger: #f04141;
-  --light-color-danger-rgb: 245,61,61;
-  --light-color-danger-contrast: #ffffff;
-  --light-color-danger-contrast-rgb: 255,255,255;
-  --light-color-danger-shade: #d33939;
-  --light-color-danger-tint: #f25454;
-
-  --light-color-dark: #0F0E0E;
-  --light-color-dark-rgb: 15,14,14;
-  --light-color-dark-contrast: #ffffff;
-  --light-color-dark-contrast-rgb: 255,255,255;
-  --light-color-dark-shade: #0d0c0c;
-  --light-color-dark-tint: #272626;
-
-  --light-color-medium: #CBC5B8;
-  --light-color-medium-rgb: 203,197,184;
-  --light-color-medium-contrast: #000000;
-  --light-color-medium-contrast-rgb: 0,0,0;
-  --light-color-medium-shade: #b3ada2;
-  --light-color-medium-tint: #d0cbbf;
-
-  --light-color-light: #EBEAE7;
-  --light-color-light-rgb: 235,234,231;
-  --light-color-light-contrast: #000000;
-  --light-color-light-contrast-rgb: 0,0,0;
-  --light-color-light-shade: #cfcecb;
-  --light-color-light-tint: #edece9;
-
   /** primary **/
-  --ion-color-primary: #3880ff;
+  --ion-color-primary: var(--dark-color-primary);/*#3880ff;*/
   --ion-color-primary-rgb: 56, 128, 255;
   --ion-color-primary-contrast: #ffffff;
   --ion-color-primary-contrast-rgb: 255, 255, 255;

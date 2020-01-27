@@ -1,2 +1,8 @@
 @import "../../app.component.scss";
 @import "~@ionic/angular/css/core.css";
+
+ion-card-header {
+    ion-card-title {
+        color: var(--dark-color-dark) !important;
+    }
+}

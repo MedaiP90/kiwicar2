@@ -1,13 +1,18 @@
-<ion-header>
+<ion-header mode="ios" translucent="true" no-border no-shadow>
   <ion-toolbar>
     <ion-buttons slot="start">
       <ion-back-button></ion-back-button>
     </ion-buttons>
     <ion-title>{{ selectedManufacturer }}</ion-title>
+    <ion-buttons slot="end">
+      <ion-button class="spacer">
+          <ion-icon name="search"></ion-icon>
+      </ion-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content fullscreen="true">
   <div class="padding">
     <app-item-model
       *ngFor="let model of models"

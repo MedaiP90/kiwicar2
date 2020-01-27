@@ -1,17 +1,2 @@
 @import "../../../app.component.scss";
 @import "~@ionic/angular/css/core.css";
-
-#search {
-    /* Variables */
-    --margin-search: 8px;
-
-    padding: var(--margin-search);
-    box-shadow:  0px 4px 8px -8px rgba(29, 29, 29, 0.5);
-
-    ion-searchbar {
-        padding-top: 0;
-        padding-bottom: 0;
-        padding-left: var(--margin-search);
-        padding-right: var(--margin-search);
-    }
-}
