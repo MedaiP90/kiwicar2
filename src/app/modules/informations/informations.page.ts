@@ -25,9 +25,8 @@ export class InformationsPage extends AbstractBackNavigationPage implements OnIn
 
   public async ngOnInit() {
     // Get app version
-    const versionCode = await this.appVersion.getVersionCode();
     const versionNumber = await this.appVersion.getVersionNumber();
-    this.version = `${versionNumber} - build ${versionCode}`;
+    this.version = `${versionNumber}`;
 
     // Copyright year
     const today = moment();
