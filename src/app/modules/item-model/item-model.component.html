@@ -1,6 +1,7 @@
 <ion-card class="car-models">
   <ion-thumbnail [class.replacement]="img === undefined">
-    <img [src]="img !== undefined ? img : '../../../assets/images/placeholder.png'" />
+    <img *ngIf="img !== undefined" [src]="img" />
+    <img *ngIf="img === undefined" src="../../../assets/images/placeholder.png" />
   </ion-thumbnail>
   <ion-card-header>
     <ion-card-subtitle>
@@ -14,12 +15,12 @@
     </ion-fab-button>
   </ion-card-header>
   <ion-card-content>
-    <ion-item class="item-data" lines="none">
-      <ion-label>
-        {{ 'APP.fuel' | translate }}: <b>{{ model.data }}</b>
+    <ion-list>
+      <ion-label *ngFor="let key of keys" class="item-data" lines="none">
+        {{ key }}: <b>{{ model.data[key] }}</b>
       </ion-label>
-    </ion-item>
-    <ion-item class="item-data" lines="none">
+    </ion-list>
+    <ion-item lines="none">
       <ion-label class="item-price">
         {{ 'APP.base-prize' | translate }}: <b>{{ model.price }}€</b>
       </ion-label>

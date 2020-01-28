@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { IModel } from 'src/app/interfaces/model.interface';
 
 @Component({
@@ -6,11 +6,19 @@ import { IModel } from 'src/app/interfaces/model.interface';
   templateUrl: './item-model.component.html',
   styleUrls: ['./item-model.component.scss'],
 })
-export class ItemModelComponent {
+export class ItemModelComponent implements OnInit {
 
   @Input() model: IModel;
   @Input() img: string | undefined;
 
-  constructor() { }
+  public keys: string[];
+
+  constructor() {
+    this.keys = [];
+  }
+
+  public ngOnInit(): void {
+    this.keys = Object.keys(this.model.data);
+  }
 
 }

@@ -7,4 +7,5 @@ export class IModel {
     manufacturer: IManufacturer;
     data: string | KeyValue<string, string>;
     price: number;
+    description: string;
 }

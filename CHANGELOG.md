@@ -14,6 +14,7 @@
 - Restyled the app theme
 - Given the home page the look of the app
 - Updated data fetch
+- Changed model data visualization in the overview
 
 ### Added
 - Initialized the _Ionic_ project

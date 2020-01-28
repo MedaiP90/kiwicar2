@@ -71,6 +71,14 @@ export class DataFetcherService {
   }
 
   private fetchModelByManufacturer(m: IManufacturer): void {
+    const testData = {
+      alimentazione: 'benzina',
+      potenza: '95cv',
+      cambio: 'manuale',
+      trazione: 'anteriore'
+    };
+    const testDescription = `Dummy description for this car from ${m.name}`;
+
     switch (m.name) {
       case 'Abarth':
         this.modelsManuf[m.name].push({
@@ -78,7 +86,8 @@ export class DataFetcherService {
           price: 20250,
           images: [A595],
           manufacturer: m,
-          data: 'benzina'
+          data: testData,
+          description: testDescription
         });
         break;
       case 'Audi':
@@ -87,14 +96,16 @@ export class DataFetcherService {
           price: 21216.7,
           images: [A3],
           manufacturer: m,
-          data: 'benzina'
+          data: testData,
+          description: testDescription
         });
         this.modelsManuf[m.name].push({
           name: 'A4',
           price: 35066.7,
           images: [A4],
           manufacturer: m,
-          data: 'benzina'
+          data: testData,
+          description: testDescription
         });
         break;
       case 'Kia':
@@ -103,7 +114,8 @@ export class DataFetcherService {
           price: 16925,
           images: [RIO],
           manufacturer: m,
-          data: 'benzina'
+          data: testData,
+          description: testDescription
         });
         break;
       case 'Opel':
@@ -112,7 +124,8 @@ export class DataFetcherService {
           price: 14580,
           images: [CORSA],
           manufacturer: m,
-          data: 'benzina'
+          data: testData,
+          description: testDescription
         });
         break;
       case 'Seat':
@@ -121,7 +134,8 @@ export class DataFetcherService {
           price: 14900,
           images: [],
           manufacturer: m,
-          data: 'benzina'
+          data: testData,
+          description: testDescription
         });
         break;
       default: break;
