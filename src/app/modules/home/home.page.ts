@@ -5,6 +5,7 @@ import { PopoverController } from '@ionic/angular';
 import { PopoverComponent } from '../popover/popover.component';
 import { DataFetcherService } from 'src/app/services/data-fetcher.service';
 import { Router } from '@angular/router';
+import { IManufacturer } from 'src/app/interfaces/manufacturer.interface';
 
 @Component({
   selector: 'app-home',
@@ -37,7 +38,7 @@ export class HomePage extends AbstractBackNavigationPage implements OnInit {
     return await popover.present();
   }
 
-  public async openManufacturer(manufacturer: string) {
+  public async openManufacturer(manufacturer: IManufacturer) {
     this.dataFetchService.setSelectedManufacturer(manufacturer);
     await this.router.navigate(['models', 'models']);
   }

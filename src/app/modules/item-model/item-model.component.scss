@@ -1,2 +1,21 @@
 @import "../../app.component.scss";
 @import "~@ionic/angular/css/core.css";
+
+.replacement {
+    height: 150px !important;
+}
+
+.fab-logo {
+    width: 2.5em !important;
+    height: auto !important;
+}
+
+.item-price {
+    width: 100%;
+    text-align: center;
+    color: var(--dark-color-tertiary);
+
+    b {
+        font-size: 1.5em;
+    }
+}

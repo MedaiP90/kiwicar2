@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { IModel } from 'src/app/interfaces/model.interface';
 
 @Component({
   selector: 'app-item-model',
@@ -7,10 +8,8 @@ import { Component, Input } from '@angular/core';
 })
 export class ItemModelComponent {
 
-  @Input() title: string;
-  @Input() img: string;
-  @Input() manufacturer: string;
-  @Input() fuel: string;
+  @Input() model: IModel;
+  @Input() img: string | undefined;
 
   constructor() { }
 

@@ -8,7 +8,8 @@
         "search": "Ricerca",
         "save": "Salva",
         "start": "Avvia",
-        "fuel": "Alimentazione"
+        "fuel": "Alimentazione",
+        "base-prize": "A partire da"
     },
     "ALL_MODELS": {
         "title": "Tutti i modelli",

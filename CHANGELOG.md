@@ -12,6 +12,8 @@
 - Home preview with mockup data
 - Updated app informations with copyright claim
 - Restyled the app theme
+- Given the home page the look of the app
+- Updated data fetch
 
 ### Added
 - Initialized the _Ionic_ project

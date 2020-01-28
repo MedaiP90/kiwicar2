@@ -16,22 +16,25 @@
 
 <ion-content fullscreen="true">
   <div class="padding">
-    <ion-card *ngFor="let manufacturer of manufacturers" (click)="openManufacturer(manufacturer.name)">
+    <ion-card
+      *ngFor="let manufacturer of manufacturers"
+      (click)="openManufacturer(manufacturer)"
+      class="car-models"
+    >
+      <ion-thumbnail>
+        <img [src]="manufacturer.logo" />
+      </ion-thumbnail>
       <ion-card-header>
         <ion-card-title>
           {{ manufacturer.name }}
         </ion-card-title>
+        <ion-card-subtitle>
+          {{ 'HOME.amount' | translate }}: <b>{{ manufacturer.modelsAmount }}</b>
+        </ion-card-subtitle>
+        <ion-fab-button>
+          <img [src]="manufacturer.logo" class="fab-logo" />
+        </ion-fab-button>
       </ion-card-header>
-      <ion-card-content>
-        <ion-item class="item-data" lines="none">
-          <ion-thumbnail slot="start">
-            <img [src]="manufacturer.logo" />
-          </ion-thumbnail>
-          <ion-label>
-            {{ 'HOME.amount' | translate }}: <b>{{ manufacturer.modelsAmount }}</b>
-          </ion-label>
-        </ion-item>
-      </ion-card-content>
     </ion-card>
   </div>
 </ion-content>

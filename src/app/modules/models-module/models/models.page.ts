@@ -3,6 +3,7 @@ import { AbstractBackNavigationPage } from '../../../utils/abstract-back-navigat
 import { BackNavigationService } from '../../../services/back-navigation.service';
 import { DataFetcherService } from 'src/app/services/data-fetcher.service';
 import { IModel } from 'src/app/interfaces/model.interface';
+import { IManufacturer } from 'src/app/interfaces/manufacturer.interface';
 
 @Component({
   selector: 'app-models',
@@ -11,7 +12,7 @@ import { IModel } from 'src/app/interfaces/model.interface';
 })
 export class ModelsPage extends AbstractBackNavigationPage implements OnInit {
 
-  public selectedManufacturer: string;
+  public selectedManufacturer: IManufacturer;
   public models: IModel[];
 
   constructor(
@@ -19,7 +20,7 @@ export class ModelsPage extends AbstractBackNavigationPage implements OnInit {
     private dataFetchService: DataFetcherService
   ) {
     super(backNavigationService, { toHome: false, inRoot: false });
-    this.selectedManufacturer = '';
+    this.selectedManufacturer = undefined;
     this.models = [];
   }
 
