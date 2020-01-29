@@ -38,3 +38,4 @@
 - Added `informations-page`
 - Added `comparisons.page`
 - Added "moment" support
+- Added comparison logic

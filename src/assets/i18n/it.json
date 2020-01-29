@@ -16,7 +16,14 @@
         "filter": "Filtro"
     },
     "COMPARISONS": {
-        "title": "Confronti"
+        "title": "Confronti",
+        "no-comparisons": "Niente da confrontare",
+        "select": "Seleziona dei modelli di auto",
+        "model": "Modello",
+        "manufacturer": "Casa",
+        "price": "Prezzo",
+        "from": "da",
+        "data": "dati"
     },
     "INFORMATIONS": {
         "title": "Informazioni",

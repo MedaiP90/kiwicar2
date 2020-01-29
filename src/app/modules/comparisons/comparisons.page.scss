@@ -1,2 +1,41 @@
 @import "../../app.component.scss";
 @import "~@ionic/angular/css/core.css";
+
+.no-element {
+    --background: transparent;
+    background-color: transparent;
+    color: var(--dark-color-dark-contrast);
+    width: 100%;
+    text-align: center;
+    font-size: 1.2em;
+}
+
+.car-models {
+    padding: 8px !important;
+}
+
+.view {
+    margin-left: 20px;
+}
+
+.table[scrollx=true], .table[scrolly=true] {
+    position: relative;
+    overflow: hidden;
+}
+
+.table[scrollx=true] {
+    overflow-x: auto;
+}
+
+td {
+    padding: 8px;
+    color: var(--dark-color-dark);
+    font-size: 1.1em;
+    white-space: nowrap;
+}
+
+tr {
+    border-bottom: 1px solid var(--dark-color-dark);
+    margin-bottom: 8px;
+    margin-right: 8px;
+}

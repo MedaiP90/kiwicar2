@@ -3,6 +3,7 @@
     <img *ngIf="img !== undefined" [src]="img" />
     <img *ngIf="img === undefined" src="../../../assets/images/placeholder.png" />
   </ion-thumbnail>
+  <ion-checkbox mode="ios" [(ngModel)]="isChecked" (ionChange)="inComparison()"></ion-checkbox>
   <ion-card-header>
     <ion-card-subtitle>
       {{ model.manufacturer.name }}

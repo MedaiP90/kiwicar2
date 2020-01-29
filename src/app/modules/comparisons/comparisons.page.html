@@ -13,5 +13,40 @@
 </ion-header>
 
 <ion-content fullscreen="true">
-
+  <div class="padding">
+    <ion-list *ngIf="comparisons.length == 0" class="no-element">
+      <ion-item lines="none" class="no-element">
+        <ion-label>
+          {{ 'COMPARISONS.no-comparisons' | translate }}
+        </ion-label>
+      </ion-item>
+      <ion-button routerDirection="root" [routerLink]="['/models/all-models']" shape="round">
+        {{ 'COMPARISONS.select' | translate }}
+      </ion-button>
+    </ion-list>
+    <ion-card class="car-models" *ngIf="comparisons.length != 0">
+      <ion-card-content class="table" scrollX="true">
+        <table>
+          <tr class="row">
+            <td class="col text"><b>{{ 'COMPARISONS.model' | translate }}</b></td>
+            <td class="col text"><b>{{ 'COMPARISONS.manufacturer' | translate }}</b></td>
+            <td class="col text"><b>{{ 'COMPARISONS.price' | translate }}</b></td>
+            <td class="col text"><b>{{ 'COMPARISONS.data' | translate }}</b></td>
+            <td class="col"></td>
+          </tr>
+          <tr class="row" *ngFor="let model of comparisons">
+            <td class="col text">{{ model.name }}</td>
+            <td class="col text">{{ model.manufacturer.name }}</td>
+            <td class="col text">{{ 'COMPARISONS.from' | translate }} {{ model.price }}€</td>
+            <td class="col text">{{ modelInfoStringify(model.data) }}</td>
+            <td class="col">
+              <ion-button class="view" shape="round">
+                <ion-icon name="eye"></ion-icon>
+              </ion-button>
+            </td>
+          </tr>
+        </table>
+      </ion-card-content>
+    </ion-card>
+  </div>
 </ion-content>

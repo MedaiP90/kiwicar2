@@ -82,6 +82,7 @@ export class DataFetcherService {
     switch (m.name) {
       case 'Abarth':
         this.modelsManuf[m.name].push({
+          id: 0,
           name: '595',
           price: 20250,
           images: [A595],
@@ -92,6 +93,7 @@ export class DataFetcherService {
         break;
       case 'Audi':
         this.modelsManuf[m.name].push({
+          id: 1,
           name: 'A3',
           price: 21216.7,
           images: [A3],
@@ -100,6 +102,7 @@ export class DataFetcherService {
           description: testDescription
         });
         this.modelsManuf[m.name].push({
+          id: 2,
           name: 'A4',
           price: 35066.7,
           images: [A4],
@@ -110,6 +113,7 @@ export class DataFetcherService {
         break;
       case 'Kia':
         this.modelsManuf[m.name].push({
+          id: 3,
           name: 'Rio',
           price: 16925,
           images: [RIO],
@@ -120,6 +124,7 @@ export class DataFetcherService {
         break;
       case 'Opel':
         this.modelsManuf[m.name].push({
+          id: 4,
           name: 'Corsa',
           price: 14580,
           images: [CORSA],
@@ -130,6 +135,7 @@ export class DataFetcherService {
         break;
       case 'Seat':
         this.modelsManuf[m.name].push({
+          id: 5,
           name: 'Ibiza',
           price: 14900,
           images: [],

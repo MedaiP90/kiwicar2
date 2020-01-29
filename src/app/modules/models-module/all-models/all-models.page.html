@@ -5,8 +5,8 @@
     </ion-buttons>
     <ion-title>{{ 'ALL_MODELS.title' | translate }}</ion-title>
     <ion-buttons slot="end">
-      <ion-button class="spacer">
-          <ion-icon name="search"></ion-icon>
+      <ion-button [class.spacer]="disabled" [disabled]="disabled" [routerLink]="['/comparisons']" shape="round">
+          <ion-icon name="git-compare"></ion-icon>
       </ion-button>
     </ion-buttons>
   </ion-toolbar>
