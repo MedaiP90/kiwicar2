@@ -25,24 +25,37 @@
       </ion-button>
     </ion-list>
     <ion-card class="car-models" *ngIf="comparisons.length != 0">
-      <ion-card-content class="table" scrollX="true">
+      <ion-thumbnail class="replacement">
+        <img src="../../../assets/images/placeholder.png" />
+      </ion-thumbnail>
+      <ion-card-header>
+        <ion-card-title>
+          {{ 'COMPARISONS.list' | translate }}
+        </ion-card-title>
+        <ion-card-subtitle>
+          {{ 'COMPARISONS.list-sub' | translate }}
+        </ion-card-subtitle>
+      </ion-card-header>
+      <ion-card-content class="table list-content" scrollX="true">
         <table>
           <tr class="row">
-            <td class="col text"><b>{{ 'COMPARISONS.model' | translate }}</b></td>
-            <td class="col text"><b>{{ 'COMPARISONS.manufacturer' | translate }}</b></td>
-            <td class="col text"><b>{{ 'COMPARISONS.price' | translate }}</b></td>
-            <td class="col text"><b>{{ 'COMPARISONS.data' | translate }}</b></td>
-            <td class="col"></td>
+            <td><b>{{ 'COMPARISONS.model' | translate }}</b></td>
+            <td><b>{{ 'COMPARISONS.manufacturer' | translate }}</b></td>
+            <td><b>{{ 'COMPARISONS.price' | translate }}</b></td>
+            <td class="data-comparison"><b>{{ 'COMPARISONS.data' | translate }}</b></td>
+            <td></td>
           </tr>
           <tr class="row" *ngFor="let model of comparisons">
-            <td class="col text">{{ model.name }}</td>
-            <td class="col text">{{ model.manufacturer.name }}</td>
-            <td class="col text">{{ 'COMPARISONS.from' | translate }} {{ model.price }}€</td>
-            <td class="col text">{{ modelInfoStringify(model.data) }}</td>
-            <td class="col">
-              <ion-button class="view" shape="round">
+            <td><b>{{ model.name }}</b></td>
+            <td>{{ model.manufacturer.name }}</td>
+            <td>{{ 'COMPARISONS.from' | translate }} <b>{{ model.price }}€</b></td>
+            <td class="data-comparison">
+              <ion-label [innerHTML]="modelInfoStringify(model.data)"></ion-label>
+            </td>
+            <td>
+              <ion-fab-button class="view" size="small">
                 <ion-icon name="eye"></ion-icon>
-              </ion-button>
+              </ion-fab-button>
             </td>
           </tr>
         </table>

@@ -15,6 +15,7 @@
 - Given the home page the look of the app
 - Updated data fetch
 - Changed model data visualization in the overview
+- Restyled comparisons page
 
 ### Added
 - Initialized the _Ionic_ project
@@ -39,3 +40,4 @@
 - Added `comparisons.page`
 - Added "moment" support
 - Added comparison logic
+- Cache the all models filter in the current session

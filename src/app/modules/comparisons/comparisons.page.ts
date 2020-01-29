@@ -33,7 +33,7 @@ export class ComparisonsPage extends AbstractBackNavigationPage implements OnIni
     const items: string[] = [];
 
     keys.forEach((key: string) => {
-      items.push(info[key]);
+      items.push(`${key}: <b>${info[key]}</b>`);
     });
 
     return items.join(', ');

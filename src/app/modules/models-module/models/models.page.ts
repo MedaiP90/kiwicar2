@@ -5,6 +5,7 @@ import { DataFetcherService } from 'src/app/services/data-fetcher.service';
 import { IModel } from 'src/app/interfaces/model.interface';
 import { IManufacturer } from 'src/app/interfaces/manufacturer.interface';
 import { ComparisonService } from 'src/app/services/comparison.service';
+import { LoadingController } from '@ionic/angular';
 
 @Component({
   selector: 'app-models',
@@ -16,19 +17,27 @@ export class ModelsPage extends AbstractBackNavigationPage implements OnInit {
   public selectedManufacturer: IManufacturer;
   public models: IModel[];
 
+  private loader: HTMLIonLoadingElement;
+
   constructor(
     backNavigationService: BackNavigationService,
     private dataFetchService: DataFetcherService,
-    private comparisonsService: ComparisonService
+    private comparisonsService: ComparisonService,
+    private loadingController: LoadingController
   ) {
     super(backNavigationService, { toHome: false, inRoot: false });
     this.selectedManufacturer = undefined;
     this.models = [];
+    this.loader = undefined;
   }
 
-  public ngOnInit() {
+  public async ngOnInit() {
+    this.loader = await this.loadingController.create({ message: 'Loading...' });
+
+    await this.loader.present();
     this.selectedManufacturer = this.dataFetchService.getSelectedManufacturer();
     this.models = this.dataFetchService.getModelsByManufacturer(this.selectedManufacturer);
+    await this.loader.dismiss();
   }
 
   public get disabled(): boolean {

@@ -12,7 +12,7 @@
   </ion-toolbar>
   <ion-toolbar>
     <ion-searchbar
-      [(ngModel)]="textFilter"
+      [(ngModel)]="dataFetcherService.allModelsFilter"
       placeholder="{{ 'ALL_MODELS.model-search' | translate }}"
       animated
       mode="ios"

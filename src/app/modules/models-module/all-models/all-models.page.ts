@@ -4,6 +4,7 @@ import { BackNavigationService } from '../../../services/back-navigation.service
 import { DataFetcherService } from '../../../services/data-fetcher.service';
 import { IModel } from 'src/app/interfaces/model.interface';
 import { ComparisonService } from 'src/app/services/comparison.service';
+import { LoadingController } from '@ionic/angular';
 
 @Component({
   selector: 'app-all-models',
@@ -12,28 +13,35 @@ import { ComparisonService } from 'src/app/services/comparison.service';
 })
 export class AllModelsPage extends AbstractBackNavigationPage implements OnInit {
 
-  public textFilter: string;
   public models: IModel[];
+
+  private loader: HTMLIonLoadingElement;
 
   constructor(
     backNavigationService: BackNavigationService,
     private dataFetcherService: DataFetcherService,
-    private comparisonsService: ComparisonService
+    private comparisonsService: ComparisonService,
+    private loadingController: LoadingController
   ) {
     super(backNavigationService, { toHome: true, inRoot: false });
-    this.textFilter = '';
     this.models = [];
+    this.loader = undefined;
   }
 
-  public ngOnInit() {
+  public async ngOnInit() {
+    this.loader = await this.loadingController.create({ message: 'Loading...' });
+
+    await this.loader.present();
     this.models = this.order(this.dataFetcherService.AllModels);
+    await this.loader.dismiss();
   }
 
   public get filteredModels(): IModel[] {
-    return this.textFilter === ''
+    return this.dataFetcherService.allModelsFilter === ''
       ? this.models
       : this.models.filter((model: IModel) =>
-          model.name.toLocaleLowerCase().includes(this.textFilter.toLocaleLowerCase())
+          model.name.toLocaleLowerCase()
+            .includes(this.dataFetcherService.allModelsFilter.toLocaleLowerCase())
         );
   }
 

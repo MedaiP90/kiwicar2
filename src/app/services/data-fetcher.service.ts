@@ -8,6 +8,8 @@ import { ABARTH, AUDI, KIA, OPEL, SEAT, A595, A3, RIO, CORSA, IBIZA, A4 } from '
 })
 export class DataFetcherService {
 
+  public allModelsFilter: string;
+
   private manufacturers: IManufacturer[];
   private modelsManuf: IModel[][];
   private query: string;
@@ -18,6 +20,7 @@ export class DataFetcherService {
     this.modelsManuf = [];
     this.query = '';
     this.selectedManufacturer = undefined;
+    this.allModelsFilter = '';
   }
 
   public getQuery(): string { return this.query; }

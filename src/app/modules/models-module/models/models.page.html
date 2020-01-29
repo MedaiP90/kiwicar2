@@ -3,7 +3,7 @@
     <ion-buttons slot="start">
       <ion-back-button></ion-back-button>
     </ion-buttons>
-    <ion-title>{{ selectedManufacturer.name }}</ion-title>
+    <ion-title>{{ selectedManufacturer == undefined ? '' : selectedManufacturer.name }}</ion-title>
     <ion-buttons slot="end">
       <ion-button [class.spacer]="disabled" [disabled]="disabled" [routerLink]="['/comparisons']" shape="round">
         <ion-icon name="git-compare"></ion-icon>
