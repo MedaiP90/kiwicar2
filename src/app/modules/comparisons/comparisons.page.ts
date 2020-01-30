@@ -40,7 +40,11 @@ export class ComparisonsPage extends AbstractBackNavigationPage implements OnIni
   }
 
   public isFav(model: IModel): boolean {
-    return true;
+    return false;
+  }
+
+  public removeFromComparisons(model: IModel): void {
+    this.comparisonsService.remove(model);
   }
 
 }

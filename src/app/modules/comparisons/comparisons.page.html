@@ -53,6 +53,11 @@
               <ion-label [innerHTML]="modelInfoStringify(model.data)"></ion-label>
             </td>
             <td class="view-button">
+              <ion-fab-button size="small" (click)="removeFromComparisons(model)">
+                <ion-icon name="trash"></ion-icon>
+              </ion-fab-button>
+            </td>
+            <td class="view-button">
               <ion-fab-button size="small">
                 <ion-icon name="eye"></ion-icon>
               </ion-fab-button>
@@ -60,11 +65,6 @@
             <td class="view-button">
               <ion-fab-button size="small" [class.fav]="isFav(model)" [class.nofav]="!isFav(model)">
                 <ion-icon name="heart"></ion-icon>
-              </ion-fab-button>
-            </td>
-            <td class="view-button">
-              <ion-fab-button size="small">
-                <ion-icon name="trash"></ion-icon>
               </ion-fab-button>
             </td>
           </tr>
