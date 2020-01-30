@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
 
-import { Platform } from '@ionic/angular';
+import { Platform, MenuController } from '@ionic/angular';
 import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
+import { TranslateConfigService } from './services/translate-config.service';
 
 @Component({
   selector: 'app-root',
@@ -12,29 +13,50 @@ import { StatusBar } from '@ionic-native/status-bar/ngx';
 export class AppComponent {
   public appPages = [
     {
-      title: 'Home',
+      title: 'MENU.home',
       url: '/home',
       icon: 'home'
     },
     {
-      title: 'List',
-      url: '/list',
-      icon: 'list'
+      title: 'MENU.models-comparison',
+      url: '/models/all-models',
+      icon: 'checkmark'
+    },
+    {
+      title: 'MENU.favorites',
+      url: '/favorites',
+      icon: 'star'
+    },
+    {
+      title: 'MENU.saved-searches',
+      url: '/searches',
+      icon: 'bookmark'
     }
   ];
 
   constructor(
     private platform: Platform,
     private splashScreen: SplashScreen,
-    private statusBar: StatusBar
+    private statusBar: StatusBar,
+    private translationConfigService: TranslateConfigService,
+    private menuController: MenuController
   ) {
     this.initializeApp();
   }
 
-  initializeApp() {
+  private initializeApp(): void {
     this.platform.ready().then(() => {
-      this.statusBar.styleDefault();
+      this.statusBar.overlaysWebView(true);
+      this.statusBar.styleBlackTranslucent();
+
+      // Translate
+      this.translationConfigService.setTranslation();
+
       this.splashScreen.hide();
     });
+  }
+
+  public async closeMenu(): Promise<boolean> {
+    return this.menuController.close();
   }
 }

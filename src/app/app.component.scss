@@ -1,0 +1,132 @@
+@import "~@ionic/angular/css/core.css";
+
+ion-split-pane {
+    background-color: var(--dark-color-light);
+}
+
+ion-menu {
+    ion-header {
+        background-color: var(--dark-color-light) !important;
+    }
+
+    ion-toolbar {
+        ion-title {
+            text-align: left !important;
+        }
+
+        ion-icon {
+            color: var(--dark-color-medium-contrast);
+        }
+    }
+
+    ion-list {
+        background-color: transparent;
+    }
+
+    ion-item {
+        --background: transparent;
+        color: var(--dark-color-medium-contrast);
+
+        ion-icon {
+            color: var(--dark-color-medium-contrast);
+        }
+    }
+
+    ion-item-divider {
+        background-color: transparent;
+    }
+}
+
+ion-header {
+    background-color: transparent;
+
+    ion-toolbar {
+        --background: var(--dark-color-light);
+        color: var(--dark-color-medium-contrast);
+        padding-top: 1.5em;
+
+        ion-title {
+            width: 100%;
+            text-align: center;
+        }
+
+        ion-searchbar {
+            --background: var(--ion-color-light);
+            color: var(--ion-color-light-contrast);
+        }
+    }
+}
+
+ion-content {
+    --background: transparent;
+    background-image: linear-gradient(var(--dark-color-light), var(--dark-color-medium), var(--dark-color-dark-tint));
+}
+
+ion-fab-button {
+    --background: var(--dark-color-tertiary);
+    --box-shadow: none;
+    color: var(--dark-color-tertiary-contrast);
+}
+
+.car-models {
+    --background: var(--ion-color-primary-contrast);
+    border-radius: 15px;
+    margin-bottom: 1.5em;
+    box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0);
+    
+    ion-card-header {
+        ion-card-title {
+            color: var(--dark-color-dark);
+        }
+
+        ion-fab-button {
+            position: absolute;
+            right: 1em;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+    }
+
+    ion-card-content {
+        padding: 0 !important;
+        color: var(--dark-color-dark);
+
+        ion-list {
+            padding-left: 1.1em;
+            padding-right: 1.1em;
+        }
+    }
+
+    ion-thumbnail {
+        width: 100%;
+        height: 70%;
+        min-height: 150px;
+        background-color: transparent;
+        background-image: linear-gradient(var(--dark-color-tertiary), var(--dark-color-secondary));
+
+        img {
+            width: 100%;
+            height: auto;
+        }
+    }
+
+    .item-data {
+        --background: var(--dark-color-primary-contrast);
+        color: var(--dark-color-dark);
+        font-size: 1.1em;
+        display: inline-block;
+        margin-right: 1.1em;
+    }
+}
+
+.padding {
+    padding: 8px;
+}
+
+.spacer {
+    color: transparent;
+
+    ion-icon {
+        color: transparent;
+    }
+}

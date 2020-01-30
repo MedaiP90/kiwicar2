@@ -3,8 +3,72 @@
 
 /** Ionic CSS Variables **/
 :root {
+  /** Custom CSS Variables dark theme **/
+  --dark-color-primary: #1C4BBF;
+  --dark-color-primary-rgb: 28,75,191;
+  --dark-color-primary-contrast: #ffffff;
+  --dark-color-primary-contrast-rgb: 255,255,255;
+  --dark-color-primary-shade: #1942a8;
+  --dark-color-primary-tint: #335dc5;
+
+  --dark-color-secondary: #8496B8;
+  --dark-color-secondary-rgb: 132,150,184;
+  --dark-color-secondary-contrast: #000000;
+  --dark-color-secondary-contrast-rgb: 0,0,0;
+  --dark-color-secondary-shade: #7484a2;
+  --dark-color-secondary-tint: #90a1bf;
+
+  --dark-color-tertiary: #3880ff;
+  --dark-color-tertiary-rgb: 56,128,255;
+  --dark-color-tertiary-contrast: #ffffff;
+  --dark-color-tertiary-contrast-rgb: 255,255,255;
+  --dark-color-tertiary-shade: #3171e0;
+  --dark-color-tertiary-tint: #4c8dff;
+
+  --dark-color-success: #10dc60;
+  --dark-color-success-rgb: 16,220,96;
+  --dark-color-success-contrast: #ffffff;
+  --dark-color-success-contrast-rgb: 255,255,255;
+  --dark-color-success-shade: #0ec254;
+  --dark-color-success-tint: #28e070;
+
+  --dark-color-warning: #ffce00;
+  --dark-color-warning-rgb: 255,206,0;
+  --dark-color-warning-contrast: #ffffff;
+  --dark-color-warning-contrast-rgb: 255,255,255;
+  --dark-color-warning-shade: #e0b500;
+  --dark-color-warning-tint: #ffd31a;
+
+  --dark-color-danger: #f04141;
+  --dark-color-danger-rgb: 245,61,61;
+  --dark-color-danger-contrast: #ffffff;
+  --dark-color-danger-contrast-rgb: 255,255,255;
+  --dark-color-danger-shade: #d33939;
+  --dark-color-danger-tint: #f25454;
+
+  --dark-color-dark: #0C0D0D;
+  --dark-color-dark-rgb: 12,13,13;
+  --dark-color-dark-contrast: #ffffff;
+  --dark-color-dark-contrast-rgb: 255,255,255;
+  --dark-color-dark-shade: #0b0b0b;
+  --dark-color-dark-tint: #242525;
+
+  --dark-color-medium: #5F6163;
+  --dark-color-medium-rgb: 95,97,99;
+  --dark-color-medium-contrast: #ffffff;
+  --dark-color-medium-contrast-rgb: 255,255,255;
+  --dark-color-medium-shade: #545557;
+  --dark-color-medium-tint: #6f7173;
+
+  --dark-color-light: #9C9EA3;
+  --dark-color-light-rgb: 156,158,163;
+  --dark-color-light-contrast: #000000;
+  --dark-color-light-contrast-rgb: 0,0,0;
+  --dark-color-light-shade: #898b8f;
+  --dark-color-light-tint: #a6a8ac;
+
   /** primary **/
-  --ion-color-primary: #3880ff;
+  --ion-color-primary: var(--dark-color-tertiary);/*#3880ff;*/
   --ion-color-primary-rgb: 56, 128, 255;
   --ion-color-primary-contrast: #ffffff;
   --ion-color-primary-contrast-rgb: 255, 255, 255;

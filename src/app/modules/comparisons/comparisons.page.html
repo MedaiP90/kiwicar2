@@ -1,0 +1,75 @@
+<ion-header mode="ios" translucent="true" no-border no-shadow>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>{{ 'COMPARISONS.title' | translate }}</ion-title>
+    <ion-buttons slot="end">
+      <ion-button class="spacer">
+          <ion-icon name="search"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content fullscreen="true">
+  <div class="padding">
+    <ion-list *ngIf="comparisons.length == 0" class="no-element">
+      <ion-item lines="none" class="no-element">
+        <ion-label>
+          {{ 'COMPARISONS.no-comparisons' | translate }}
+        </ion-label>
+      </ion-item>
+      <ion-button routerDirection="root" [routerLink]="['/models/all-models']" shape="round">
+        {{ 'COMPARISONS.select' | translate }}
+      </ion-button>
+    </ion-list>
+    <ion-card class="car-models" *ngIf="comparisons.length != 0">
+      <ion-thumbnail class="replacement">
+        <img src="../../../assets/images/placeholder.png" />
+      </ion-thumbnail>
+      <ion-card-header>
+        <ion-card-title>
+          {{ 'COMPARISONS.list' | translate }}
+        </ion-card-title>
+        <ion-card-subtitle>
+          {{ 'COMPARISONS.list-sub' | translate }}
+        </ion-card-subtitle>
+      </ion-card-header>
+      <ion-card-content class="table list-content" scrollX="true">
+        <table>
+          <tr class="row">
+            <td><b>{{ 'COMPARISONS.model' | translate }}</b></td>
+            <td><b>{{ 'COMPARISONS.manufacturer' | translate }}</b></td>
+            <td><b>{{ 'COMPARISONS.price' | translate }}</b></td>
+            <td class="data-comparison"><b>{{ 'COMPARISONS.data' | translate }}</b></td>
+            <td colspan="3"><b>{{ 'COMPARISONS.actions' | translate }}</b></td>
+          </tr>
+          <tr class="row" *ngFor="let model of comparisons">
+            <td><b class="bigger">{{ model.name }}</b></td>
+            <td>{{ model.manufacturer.name }}</td>
+            <td>{{ 'COMPARISONS.from' | translate }} <b>{{ model.price }}€</b></td>
+            <td class="data-comparison">
+              <ion-label [innerHTML]="modelInfoStringify(model.data)"></ion-label>
+            </td>
+            <td class="view-button">
+              <ion-fab-button size="small" (click)="removeFromComparisons(model)">
+                <ion-icon name="trash"></ion-icon>
+              </ion-fab-button>
+            </td>
+            <td class="view-button">
+              <ion-fab-button size="small">
+                <ion-icon name="eye"></ion-icon>
+              </ion-fab-button>
+            </td>
+            <td class="view-button">
+              <ion-fab-button size="small" [class.fav]="isFav(model)" [class.nofav]="!isFav(model)">
+                <ion-icon name="heart"></ion-icon>
+              </ion-fab-button>
+            </td>
+          </tr>
+        </table>
+      </ion-card-content>
+    </ion-card>
+  </div>
+</ion-content>

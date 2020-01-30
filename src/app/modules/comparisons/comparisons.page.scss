@@ -1,0 +1,70 @@
+@import "../../app.component.scss";
+@import "~@ionic/angular/css/core.css";
+
+.no-element {
+    --background: transparent;
+    background-color: transparent;
+    color: var(--dark-color-dark-contrast);
+    width: 100%;
+    text-align: center;
+    font-size: 1.2em;
+}
+
+.list-content {
+    margin-right: 8px !important;
+    margin-left: 8px !important;
+}
+
+.replacement {
+    height: 150px !important;
+}
+
+ion-fab-button {
+    --box-shadow: 0px 3px 3px 0px rgba(0, 0, 0, 0.35) !important;
+    margin: 0px !important;
+}
+
+.fav {
+    --background: var(--dark-color-danger) !important;
+    color: var(--dark-color-danger-contrast) !important;
+}
+
+.nofav {
+    --background: var(--dark-color-light) !important;
+    color: var(--dark-color-light-contrast) !important;
+}
+
+.table[scrollx=true], .table[scrolly=true] {
+    position: relative;
+    overflow: hidden;
+}
+
+.table[scrollx=true] {
+    overflow-x: auto;
+}
+
+.data-comparison {
+    min-width: 80vw !important;
+    white-space: normal !important;
+}
+
+td {
+    padding: 8px;
+    color: var(--dark-color-dark);
+    font-size: 1.1em;
+    white-space: nowrap;
+
+    .bigger {
+        font-size: 1.25em !important;
+    }
+
+    .view-button {
+        padding: 0px !important;
+    }
+}
+
+tr {
+    border-bottom: 1px solid var(--dark-color-dark);
+    margin-bottom: 8px;
+    margin-right: 8px;
+}

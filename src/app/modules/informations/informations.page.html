@@ -1,0 +1,33 @@
+<ion-header mode="ios" translucent="true" no-border no-shadow>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>{{ 'INFORMATIONS.title' | translate }}</ion-title>
+    <ion-buttons slot="end">
+      <ion-button class="spacer">
+          <ion-icon name="search"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content fullscreen="true">
+  <div class="padding">
+    <ion-card class="car-models">
+      <ion-card-header>
+        <ion-card-title>
+          {{ 'APP.app-name' | translate }} {{ 'INFORMATIONS.version' | translate }}{{ version }}
+        </ion-card-title>
+      </ion-card-header>
+    </ion-card>
+  </div>
+</ion-content>
+
+<ion-footer class="copyright" text-center no-border no-shadow>
+  <ion-list class="copyright">
+    <ion-label class="copyright" disabled="true" lines="none">
+      &copy; Copyright {{ copyrightTime }}, CoMa Softwares
+    </ion-label>
+  </ion-list>
+</ion-footer>

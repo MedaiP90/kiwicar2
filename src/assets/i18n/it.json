@@ -1,0 +1,58 @@
+{
+    "APP": {
+        "app-name": "KiwiCar",
+        "close-title": "Uscire da KiwiCar?",
+        "close": "Chiudi KiwiCar",
+        "cancel": "Annulla",
+        "sure-to-close": "Sei sicuro di voler uscire dall'app?",
+        "search": "Ricerca",
+        "save": "Salva",
+        "start": "Avvia",
+        "base-prize": "A partire da"
+    },
+    "ALL_MODELS": {
+        "title": "Tutti i modelli",
+        "model-search": "Cerca un modello",
+        "filter": "Filtro"
+    },
+    "COMPARISONS": {
+        "title": "Confronti",
+        "no-comparisons": "Niente da confrontare",
+        "select": "Seleziona dei modelli di auto",
+        "model": "Modello",
+        "manufacturer": "Casa",
+        "price": "Prezzo",
+        "from": "da",
+        "data": "Dati",
+        "list": "Ecco i modelli selezionati",
+        "list-sub": "Scorri per vedere tutte le informazioni",
+        "actions": "Azioni"
+    },
+    "INFORMATIONS": {
+        "title": "Informazioni",
+        "version": "v"
+    },
+    "HOME": {
+        "amount": "Modelli disponibili"
+    },
+    "FAVORITES": {
+        "title": "Preferiti"
+    },
+    "SEARCH": {
+        "title": "Ricerca",
+        "saved": "Ricerca salvata",
+        "not-saved": "Ricerca non salvata"
+    },
+    "SEARCHES": {
+        "title": "Ricerche salvate"
+    },
+    "MENU": {
+        "title": "Menu",
+        "home": "Home",
+        "favorites": "Preferiti",
+        "saved-searches": "Ricerche salvate",
+        "models-comparison": "Tutti i modelli",
+        "comparisons": "Confronti",
+        "informations": "Informazioni"
+    }
+}
