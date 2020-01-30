@@ -33,7 +33,9 @@ export class HomePage extends AbstractBackNavigationPage implements OnInit {
     this.loader = await this.loadingController.create({ message: 'Loading...' });
 
     await this.loader.present();
-    this.manufacturers = this.dataFetchService.AllManufacturers;
+    this.manufacturers = this.dataFetchService.AllManufacturers.sort(
+      (m1: IManufacturer, m2: IManufacturer) => m1.name.toLowerCase().localeCompare(m2.name.toLowerCase())
+    );
     await this.loader.dismiss();
   }
 

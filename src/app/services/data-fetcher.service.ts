@@ -61,11 +61,11 @@ export class DataFetcherService {
 
   private fetchManufacturers(): void {
     this.manufacturers = [
-      { name: 'Abarth', logo: ABARTH, modelsAmount: 1 },
-      { name: 'Audi', logo: AUDI, modelsAmount: 2 },
       { name: 'Kia', logo: KIA, modelsAmount: 1 },
-      { name: 'Opel', logo: OPEL, modelsAmount: 1 },
-      { name: 'Seat', logo: SEAT, modelsAmount: 1 }
+      { name: 'Abarth', logo: ABARTH, modelsAmount: 1 },
+      { name: 'Seat', logo: SEAT, modelsAmount: 1 },
+      { name: 'Audi', logo: AUDI, modelsAmount: 2 },
+      { name: 'Opel', logo: OPEL, modelsAmount: 1 }
     ];
 
     this.manufacturers.forEach((m: IManufacturer) => {
