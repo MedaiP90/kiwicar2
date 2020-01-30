@@ -14,18 +14,20 @@ import { LoadingController } from '@ionic/angular';
 export class AllModelsPage extends AbstractBackNavigationPage implements OnInit {
 
   public models: IModel[];
+  public dataFetcherService: DataFetcherService;
 
   private loader: HTMLIonLoadingElement;
 
   constructor(
     backNavigationService: BackNavigationService,
-    private dataFetcherService: DataFetcherService,
+    dataFetcherService: DataFetcherService,
     private comparisonsService: ComparisonService,
     private loadingController: LoadingController
   ) {
     super(backNavigationService, { toHome: true, inRoot: false });
     this.models = [];
     this.loader = undefined;
+    this.dataFetcherService = dataFetcherService;
   }
 
   public async ngOnInit() {
