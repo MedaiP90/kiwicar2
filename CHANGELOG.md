@@ -2,6 +2,7 @@
 
 ## [Unreleased]
 
+## [0.3.0proto]
 ### Changed
 - Updated `README.md`
 - Updated `config.xml`
