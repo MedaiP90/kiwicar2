@@ -96,19 +96,19 @@ export class DataFetcherService {
         break;
       case 'Audi':
         this.modelsManuf[m.name].push({
-          id: 1,
-          name: 'A3',
-          price: 21216.7,
-          images: [A3],
+          id: 2,
+          name: 'A4',
+          price: 35066.7,
+          images: [A4],
           manufacturer: m,
           data: testData,
           description: testDescription
         });
         this.modelsManuf[m.name].push({
-          id: 2,
-          name: 'A4',
-          price: 35066.7,
-          images: [A4],
+          id: 1,
+          name: 'A3',
+          price: 21216.7,
+          images: [A3],
           manufacturer: m,
           data: testData,
           description: testDescription

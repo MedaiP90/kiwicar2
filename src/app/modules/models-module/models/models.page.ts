@@ -36,7 +36,8 @@ export class ModelsPage extends AbstractBackNavigationPage implements OnInit {
 
     await this.loader.present();
     this.selectedManufacturer = this.dataFetchService.getSelectedManufacturer();
-    this.models = this.dataFetchService.getModelsByManufacturer(this.selectedManufacturer);
+    this.models = this.dataFetchService.getModelsByManufacturer(this.selectedManufacturer)
+      .sort((model1: IModel, model2: IModel) => model1.name.toLowerCase().localeCompare(model2.name.toLowerCase()));
     await this.loader.dismiss();
   }
 
