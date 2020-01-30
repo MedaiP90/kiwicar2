@@ -39,4 +39,8 @@ export class ComparisonsPage extends AbstractBackNavigationPage implements OnIni
     return items.join(', ');
   }
 
+  public isFav(model: IModel): boolean {
+    return true;
+  }
+
 }

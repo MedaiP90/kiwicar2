@@ -23,9 +23,10 @@
         "manufacturer": "Casa",
         "price": "Prezzo",
         "from": "da",
-        "data": "dati",
+        "data": "Dati",
         "list": "Ecco i modelli selezionati",
-        "list-sub": "Scorri per vedere tutte le informazioni"
+        "list-sub": "Scorri per vedere tutte le informazioni",
+        "actions": "Azioni"
     },
     "INFORMATIONS": {
         "title": "Informazioni",

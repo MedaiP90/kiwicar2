@@ -41,3 +41,4 @@
 - Added "moment" support
 - Added comparison logic
 - Cache the all models filter in the current session
+- Added actions to comparisons

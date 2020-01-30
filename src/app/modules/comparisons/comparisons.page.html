@@ -43,18 +43,28 @@
             <td><b>{{ 'COMPARISONS.manufacturer' | translate }}</b></td>
             <td><b>{{ 'COMPARISONS.price' | translate }}</b></td>
             <td class="data-comparison"><b>{{ 'COMPARISONS.data' | translate }}</b></td>
-            <td></td>
+            <td colspan="3"><b>{{ 'COMPARISONS.actions' | translate }}</b></td>
           </tr>
           <tr class="row" *ngFor="let model of comparisons">
-            <td><b>{{ model.name }}</b></td>
+            <td><b class="bigger">{{ model.name }}</b></td>
             <td>{{ model.manufacturer.name }}</td>
             <td>{{ 'COMPARISONS.from' | translate }} <b>{{ model.price }}€</b></td>
             <td class="data-comparison">
               <ion-label [innerHTML]="modelInfoStringify(model.data)"></ion-label>
             </td>
-            <td>
-              <ion-fab-button class="view" size="small">
+            <td class="view-button">
+              <ion-fab-button size="small">
                 <ion-icon name="eye"></ion-icon>
+              </ion-fab-button>
+            </td>
+            <td class="view-button">
+              <ion-fab-button size="small" [class.fav]="isFav(model)" [class.nofav]="!isFav(model)">
+                <ion-icon name="heart"></ion-icon>
+              </ion-fab-button>
+            </td>
+            <td class="view-button">
+              <ion-fab-button size="small">
+                <ion-icon name="trash"></ion-icon>
               </ion-fab-button>
             </td>
           </tr>
