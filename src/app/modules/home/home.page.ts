@@ -1,9 +1,13 @@
 import { Component, OnInit } from '@angular/core';
-import { PopoverController, LoadingController } from '@ionic/angular';
+import { Plugins, PluginListenerHandle } from '@capacitor/core';
+import { PopoverController, LoadingController, AlertController } from '@ionic/angular';
 import { PopoverComponent } from '../popover/popover.component';
 import { DataFetcherService } from 'src/app/services/data-fetcher.service';
 import { Router } from '@angular/router';
 import { IManufacturer } from 'src/app/interfaces/manufacturer.interface';
+import { TranslateService } from '@ngx-translate/core';
+
+const { App } = Plugins;
 
 @Component({
   selector: 'app-home',
@@ -15,14 +19,20 @@ export class HomePage implements OnInit {
   public manufacturers;
 
   private loader: HTMLIonLoadingElement;
+  private handler: PluginListenerHandle;
+  private confirmExitAlert: HTMLIonAlertElement;
 
   constructor(
     private popoverController: PopoverController,
     private dataFetchService: DataFetcherService,
     private router: Router,
-    private loadingController: LoadingController
+    private loadingController: LoadingController,
+    private alertController: AlertController,
+    private translateService: TranslateService
   ) {
     this.loader = undefined;
+    this.handler = undefined;
+    this.confirmExitAlert = undefined;
   }
 
   public async ngOnInit(): Promise<void> {
@@ -33,6 +43,16 @@ export class HomePage implements OnInit {
       (m1: IManufacturer, m2: IManufacturer) => m1.name.toLowerCase().localeCompare(m2.name.toLowerCase())
     );
     await this.loader.dismiss();
+  }
+
+  public ionViewDidEnter() {
+    this.handler = App.addListener('backButton', () => this.presentExitAlertConfirm());
+  }
+
+  public ionViewDidLeave() {
+    if (this.handler !== undefined) {
+      this.handler.remove();
+    }
   }
 
   public async presentPopover() {
@@ -47,6 +67,44 @@ export class HomePage implements OnInit {
   public async openManufacturer(manufacturer: IManufacturer) {
     this.dataFetchService.setSelectedManufacturer(manufacturer);
     await this.router.navigate(['models', 'models']);
+  }
+
+  // Alert
+
+  private async presentExitAlertConfirm(): Promise<void> {
+    if (this.confirmExitAlert !== undefined) {
+        return;
+    }
+
+    // tslint:disable-next-line: typedef
+    this.confirmExitAlert = await this.alertController.create({
+      header: this.getTranslatedString('APP.close-title'),
+      message: this.getTranslatedString('APP.sure-to-close'),
+      buttons: [
+          {
+              text: this.getTranslatedString('APP.cancel'),
+              role: 'cancel',
+              cssClass: 'secondary',
+              handler: (): void => { }, // Do nothing
+          },
+          {
+              text: this.getTranslatedString('APP.close'),
+              handler: (): void => { App.exitApp(); }, // Close the app
+          },
+      ],
+    });
+    await this.confirmExitAlert.present();
+    this.confirmExitAlert.onDidDismiss().then(() => { this.confirmExitAlert = undefined; });
+  }
+
+  // Internationalization
+
+  private getTranslatedString(key: string): string {
+    // tslint:disable-next-line: typedef
+    const translation = this.translateService.instant(key);
+    if (typeof translation === 'string') {
+      return translation;
+    }
   }
 
 }
