@@ -1,6 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { AbstractBackNavigationPage } from 'src/app/utils/abstract-back-navigation';
-import { BackNavigationService } from '../../../services/back-navigation.service';
 import { DataFetcherService } from '../../../services/data-fetcher.service';
 import { IModel } from 'src/app/interfaces/model.interface';
 import { ComparisonService } from 'src/app/services/comparison.service';
@@ -11,7 +9,7 @@ import { LoadingController } from '@ionic/angular';
   templateUrl: './all-models.page.html',
   styleUrls: ['./all-models.page.scss'],
 })
-export class AllModelsPage extends AbstractBackNavigationPage implements OnInit {
+export class AllModelsPage implements OnInit {
 
   public models: IModel[];
   public dataFetcherService: DataFetcherService;
@@ -19,12 +17,10 @@ export class AllModelsPage extends AbstractBackNavigationPage implements OnInit 
   private loader: HTMLIonLoadingElement;
 
   constructor(
-    backNavigationService: BackNavigationService,
     dataFetcherService: DataFetcherService,
     private comparisonsService: ComparisonService,
     private loadingController: LoadingController
   ) {
-    super(backNavigationService, { toHome: true, inRoot: false });
     this.models = [];
     this.loader = undefined;
     this.dataFetcherService = dataFetcherService;

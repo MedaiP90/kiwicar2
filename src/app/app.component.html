@@ -1,6 +1,6 @@
 <ion-app>
   <ion-split-pane contentId="main-content">
-    <ion-menu contentId="main-content" type="overlay">
+    <ion-menu contentId="main-content" type="overlay" swipeGesture="false">
       <ion-header no-border no-shadow>
         <ion-toolbar>
           <ion-title>{{ 'APP.app-name' | translate }}</ion-title>
@@ -12,18 +12,10 @@
       <ion-content>
         <ion-list>
           <ion-menu-toggle auto-hide="false" *ngFor="let appPage of appPages">
-            <ion-item routerDirection="root" [routerLink]="[appPage.url]" lines="none">
+            <ion-item [routerLink]="[appPage.url]" lines="none">
               <ion-icon slot="start" [name]="appPage.icon"></ion-icon>
               <ion-label>
                 {{ appPage.title | translate }}
-              </ion-label>
-            </ion-item>
-          </ion-menu-toggle>
-          <ion-menu-toggle auto-hide="false">
-            <ion-item [routerLink]="['/comparisons']" lines="none">
-              <ion-icon slot="start" name="git-compare"></ion-icon>
-              <ion-label>
-                {{ 'MENU.comparisons' | translate }}
               </ion-label>
             </ion-item>
           </ion-menu-toggle>

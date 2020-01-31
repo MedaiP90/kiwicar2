@@ -1,6 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { AbstractBackNavigationPage } from 'src/app/utils/abstract-back-navigation';
-import { BackNavigationService } from '../../services/back-navigation.service';
 import { DataFetcherService } from '../../services/data-fetcher.service';
 import { ToastController } from '@ionic/angular';
 import { TranslateService } from '@ngx-translate/core';
@@ -10,17 +8,15 @@ import { TranslateService } from '@ngx-translate/core';
   templateUrl: './search.page.html',
   styleUrls: ['./search.page.scss'],
 })
-export class SearchPage extends AbstractBackNavigationPage implements OnInit {
+export class SearchPage implements OnInit {
 
   public query: string;
 
   constructor(
-    backNavigationService: BackNavigationService,
     private dataFetch: DataFetcherService,
     private toastController: ToastController,
     private translateService: TranslateService
   ) {
-    super(backNavigationService, { toHome: false, inRoot: false });
     this.query = '';
   }
 
