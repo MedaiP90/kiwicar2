@@ -1,6 +1,8 @@
 # KiwiCar 2 changelog
 
 ## [Unreleased]
+### Changed
+- Updated `README.md`
 
 ## [0.3.0proto]
 ### Changed

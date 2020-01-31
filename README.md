@@ -23,5 +23,21 @@ Per lanciare il progetto in modalità sviluppo (testare funzionalità o modifich
 
 ### Modalità produzione
 
-È sufficiente lanciare il seguente comando:
-`ionic cordova build android`
+Occorre inizialmente buildare l'_apk_:
+```bash
+ionic cordova build android --prod --release
+```
+
+Di conseguenza si procede a firmare l'applicazione:
+```bash
+jarsigner -verbose -sigalg SHA1withRSA -digestalg SHA1 -keystore keystore_name.keystore /path/to/unsigned/app/kiwicar2-release-unsigned.apk keystore_alias
+
+```
+
+Infine si procede compattando la release:
+```bash
+cd /path/to/android_sdk/build_tools/[version]
+```
+```bash
+./zipalign -v 4 /path/to/signed/app/kiwicar2-release-unsigned.apk /output/path/kiwicar2.apk
+```
