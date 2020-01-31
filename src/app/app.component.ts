@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-
+import { StatusBar } from '@ionic-native/status-bar/ngx';
 import { Platform, MenuController } from '@ionic/angular';
 import { Plugins } from '@capacitor/core';
 import { TranslateConfigService } from './services/translate-config.service';
