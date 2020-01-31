@@ -15,23 +15,25 @@ Per poter lavorare al progetto occore installare alcune dipendenze:
 
 Preventivamente è sempre consigliato eseguire il comando `npm install` per soddisfare eventuali dipendenze aggiunte in fase di sviluppo.
 
-### Modalità sviluppo
-
-Per lanciare il progetto in modalità sviluppo (testare funzionalità o modifiche, individuare bug) è possibile eseguire due tipi di comando:
-- _live-reload_, ogni modifica effettuata ai sorgenti verrà ricompilata in tempo reale e trasmessa al dispositivo di test: `ionic cordova run android --device --livereload`;
-- _development_, viene generato un applicativo di debug, installato poi sul dispositivo (le modifiche devono essere ricompilate manualmente): `ionic cordova run android --device`.
-
-### Modalità produzione
-
-Occorre inizialmente buildare l'_apk_:
+Fare la build del progetto:
 ```bash
-ionic cordova build android --prod --release
+ionic build
 ```
 
-Di conseguenza si procede a firmare l'applicazione:
+Sincronizzare i dati con il progetto android:
+```bash
+npx cap sync android
+```
+
+Aprire _Android Studio_ e proseguire dall'IDE:
+```bash
+npx cap open android
+```
+
+### Firmare l'applicazione
+
 ```bash
 jarsigner -verbose -sigalg SHA1withRSA -digestalg SHA1 -keystore keystore_name.keystore /path/to/unsigned/app/kiwicar2-release-unsigned.apk keystore_alias
-
 ```
 
 Infine si procede compattando la release:

@@ -1,8 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { AppVersion } from '@ionic-native/app-version/ngx';
-import { BackNavigationService } from 'src/app/services/back-navigation.service';
-import { AbstractBackNavigationPage } from 'src/app/utils/abstract-back-navigation';
+import { DeviceInfo, Plugins } from '@capacitor/core';
+import { BackNavigationService } from '../../services/back-navigation.service';
+import { AbstractBackNavigationPage } from '../../utils/abstract-back-navigation';
 import * as moment from 'moment';
+
+const { DeviceInfo, Device } = Plugins;
 
 @Component({
   selector: 'app-informations',
@@ -15,7 +17,6 @@ export class InformationsPage extends AbstractBackNavigationPage implements OnIn
   public copyrightTime: string;
 
   constructor(
-    private appVersion: AppVersion,
     backNavigationService: BackNavigationService
   ) {
     super(backNavigationService, { toHome: false, inRoot: false });
@@ -25,13 +26,23 @@ export class InformationsPage extends AbstractBackNavigationPage implements OnIn
 
   public async ngOnInit() {
     // Get app version
-    const versionNumber = await this.appVersion.getVersionNumber();
-    this.version = `${versionNumber}`;
+    const deviceInfo: DeviceInfo = await this.getCurrentDeviceInformation();
+    this.version = `${deviceInfo !== undefined ? deviceInfo.appVersion : ''}`;
 
     // Copyright year
     const today = moment();
     const start = moment('31/12/2020');
     this.copyrightTime = `2020${today.isAfter(start) ? ` - ${today.format('YYYY')}` : ''}`;
+  }
+
+  private async getCurrentDeviceInformation(): Promise<DeviceInfo | undefined> {
+    try {
+      return await Device.getInfo();
+    } catch (error) {
+        console.error('error getting device information', error);
+    }
+
+    return undefined;
   }
 
 }

@@ -1,9 +1,10 @@
 import { Component } from '@angular/core';
 
 import { Platform, MenuController } from '@ionic/angular';
-import { SplashScreen } from '@ionic-native/splash-screen/ngx';
-import { StatusBar } from '@ionic-native/status-bar/ngx';
+import { Plugins } from '@capacitor/core';
 import { TranslateConfigService } from './services/translate-config.service';
+
+const { SplashScreen } = Plugins;
 
 @Component({
   selector: 'app-root',
@@ -36,7 +37,6 @@ export class AppComponent {
 
   constructor(
     private platform: Platform,
-    private splashScreen: SplashScreen,
     private statusBar: StatusBar,
     private translationConfigService: TranslateConfigService,
     private menuController: MenuController
@@ -45,18 +45,26 @@ export class AppComponent {
   }
 
   private initializeApp(): void {
-    this.platform.ready().then(() => {
+    this.platform.ready().then(async () => {
       this.statusBar.overlaysWebView(true);
       this.statusBar.styleBlackTranslucent();
 
       // Translate
       this.translationConfigService.setTranslation();
 
-      this.splashScreen.hide();
+      await this.hideSplash();
     });
   }
 
   public async closeMenu(): Promise<boolean> {
     return this.menuController.close();
+  }
+
+  private async hideSplash(): Promise<void> {
+    try {
+        await SplashScreen.hide();
+    } catch (error) {
+        console.error('error hiding splash screen', error);
+    }
   }
 }

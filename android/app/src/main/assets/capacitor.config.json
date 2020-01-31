@@ -1,0 +1,22 @@
+{
+  "appId": "com.comasoftware.kiwicartwo",
+  "appName": "KiwiCar 2",
+  "bundledWebRuntime": false,
+  "npmClient": "npm",
+  "webDir": "www",
+  "cordova": {
+    "preferences": {
+      "ScrollEnabled": "false",
+      "android-minSdkVersion": "23",
+      "BackupWebStorage": "none",
+      "orientation": "portrait",
+      "SplashMaintainAspectRatio": "true",
+      "FadeSplashScreenDuration": "300",
+      "SplashShowOnlyFirstTime": "false",
+      "ShowSplashScreenSpinner": "false",
+      "SplashScreen": "screen",
+      "SplashScreenDelay": "3000",
+      "StatusBarOverlaysWebView": "true"
+    }
+  }
+}

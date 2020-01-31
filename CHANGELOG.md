@@ -3,6 +3,7 @@
 ## [Unreleased]
 ### Changed
 - Updated `README.md`
+- Migrated to `Capacitor`
 
 ## [0.3.0proto]
 ### Changed
