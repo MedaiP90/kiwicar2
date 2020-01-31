@@ -46,7 +46,7 @@ export class HomePage implements OnInit {
   }
 
   public ionViewDidEnter() {
-    this.handler = App.addListener('backButton', () => this.presentExitAlertConfirm());
+    this.handler = App.addListener('backButton', () => App.exitApp());
   }
 
   public ionViewDidLeave() {
@@ -67,44 +67,6 @@ export class HomePage implements OnInit {
   public async openManufacturer(manufacturer: IManufacturer) {
     this.dataFetchService.setSelectedManufacturer(manufacturer);
     await this.router.navigate(['models', 'models']);
-  }
-
-  // Alert
-
-  private async presentExitAlertConfirm(): Promise<void> {
-    if (this.confirmExitAlert !== undefined) {
-        return;
-    }
-
-    // tslint:disable-next-line: typedef
-    this.confirmExitAlert = await this.alertController.create({
-      header: this.getTranslatedString('APP.close-title'),
-      message: this.getTranslatedString('APP.sure-to-close'),
-      buttons: [
-          {
-              text: this.getTranslatedString('APP.cancel'),
-              role: 'cancel',
-              cssClass: 'secondary',
-              handler: (): void => { }, // Do nothing
-          },
-          {
-              text: this.getTranslatedString('APP.close'),
-              handler: (): void => { App.exitApp(); }, // Close the app
-          },
-      ],
-    });
-    await this.confirmExitAlert.present();
-    this.confirmExitAlert.onDidDismiss().then(() => { this.confirmExitAlert = undefined; });
-  }
-
-  // Internationalization
-
-  private getTranslatedString(key: string): string {
-    // tslint:disable-next-line: typedef
-    const translation = this.translateService.instant(key);
-    if (typeof translation === 'string') {
-      return translation;
-    }
   }
 
 }
