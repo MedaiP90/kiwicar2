@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+import { IonicConfig } from '@ionic/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouteReuseStrategy } from '@angular/router';
 
@@ -19,12 +20,18 @@ export function LanguageLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
 }
 
+const ionicConfig: IonicConfig = {
+  animated: true,
+  swipeBackEnabled: true,
+  experimentalTransitionShadow: true,
+};
+
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(),
+    IonicModule.forRoot(ionicConfig),
     AppRoutingModule,
     HttpClientModule,
     TranslateModule.forRoot({
