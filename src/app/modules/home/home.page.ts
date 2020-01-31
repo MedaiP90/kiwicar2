@@ -1,6 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { AbstractBackNavigationPage } from '../../utils/abstract-back-navigation';
-import { BackNavigationService } from '../../services/back-navigation.service';
 import { PopoverController, LoadingController } from '@ionic/angular';
 import { PopoverComponent } from '../popover/popover.component';
 import { DataFetcherService } from 'src/app/services/data-fetcher.service';
@@ -12,20 +10,18 @@ import { IManufacturer } from 'src/app/interfaces/manufacturer.interface';
   templateUrl: 'home.page.html',
   styleUrls: ['home.page.scss'],
 })
-export class HomePage extends AbstractBackNavigationPage implements OnInit {
+export class HomePage implements OnInit {
 
   public manufacturers;
 
   private loader: HTMLIonLoadingElement;
 
   constructor(
-    backNavigationService: BackNavigationService,
     private popoverController: PopoverController,
     private dataFetchService: DataFetcherService,
     private router: Router,
     private loadingController: LoadingController
   ) {
-    super(backNavigationService, { toHome: false, inRoot: true });
     this.loader = undefined;
   }
 

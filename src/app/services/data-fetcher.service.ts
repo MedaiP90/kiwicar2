@@ -141,7 +141,7 @@ export class DataFetcherService {
           id: 5,
           name: 'Ibiza',
           price: 14900,
-          images: [],
+          images: [IBIZA],
           manufacturer: m,
           data: testData,
           description: testDescription

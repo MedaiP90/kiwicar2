@@ -4,6 +4,8 @@
 ### Changed
 - Updated `README.md`
 - Migrated to `Capacitor`
+- Removed `Cordova` hardware back navigation system
+- Enabled _swipe back_ functionality
 
 ## [0.3.0proto]
 ### Changed

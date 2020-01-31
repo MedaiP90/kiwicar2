@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { DeviceInfo, Plugins } from '@capacitor/core';
-import { BackNavigationService } from '../../services/back-navigation.service';
-import { AbstractBackNavigationPage } from '../../utils/abstract-back-navigation';
 import * as moment from 'moment';
 
 const { DeviceInfo, Device } = Plugins;
@@ -11,15 +9,12 @@ const { DeviceInfo, Device } = Plugins;
   templateUrl: './informations.page.html',
   styleUrls: ['./informations.page.scss'],
 })
-export class InformationsPage extends AbstractBackNavigationPage implements OnInit {
+export class InformationsPage implements OnInit {
 
   public version: string;
   public copyrightTime: string;
 
-  constructor(
-    backNavigationService: BackNavigationService
-  ) {
-    super(backNavigationService, { toHome: false, inRoot: false });
+  constructor() {
     this.version = '';
     this.copyrightTime = '';
   }
