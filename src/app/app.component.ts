@@ -1,10 +1,9 @@
 import { Component } from '@angular/core';
-import { StatusBar } from '@ionic-native/status-bar/ngx';
 import { Platform, MenuController } from '@ionic/angular';
-import { Plugins } from '@capacitor/core';
+import { Plugins, StatusBarStyle } from '@capacitor/core';
 import { TranslateConfigService } from './services/translate-config.service';
 
-const { SplashScreen } = Plugins;
+const { SplashScreen, StatusBar } = Plugins;
 
 @Component({
   selector: 'app-root',
@@ -42,7 +41,6 @@ export class AppComponent {
 
   constructor(
     private platform: Platform,
-    private statusBar: StatusBar,
     private translationConfigService: TranslateConfigService,
     private menuController: MenuController
   ) {
@@ -51,14 +49,28 @@ export class AppComponent {
 
   private initializeApp(): void {
     this.platform.ready().then(async () => {
-      this.statusBar.overlaysWebView(true);
-      this.statusBar.styleBlackTranslucent();
+      // Status bar
+      await this.initializeStatusBar();
 
       // Translate
       this.translationConfigService.setTranslation();
 
       await this.hideSplash();
     });
+  }
+
+  private async initializeStatusBar(): Promise<void> {
+    try {
+      await StatusBar.setStyle({ style: StatusBarStyle.Dark });
+    } catch (error) {
+      console.error(this.constructor.name, 'error setting status bar style', error);
+    }
+
+    try {
+      await StatusBar.setBackgroundColor({ color: '#9C9EA3' });
+    } catch (error) {
+      console.error(this.constructor.name, 'error setting status bar color', error);
+    }
   }
 
   public async closeMenu(): Promise<boolean> {

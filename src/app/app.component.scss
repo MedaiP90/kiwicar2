@@ -38,12 +38,11 @@ ion-menu {
 }
 
 ion-header {
-    background-color: transparent;
+    background-color: var(--dark-color-light);
 
     ion-toolbar {
         --background: var(--dark-color-light);
         color: var(--dark-color-medium-contrast);
-        padding-top: 1.5em;
 
         ion-title {
             width: 100%;

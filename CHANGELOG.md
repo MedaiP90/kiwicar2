@@ -3,10 +3,15 @@
 ## [Unreleased]
 ### Changed
 - Updated `README.md`
-- Migrated to `Capacitor`
-- Removed `Cordova` hardware back navigation system
+- Migrated to _Capacitor_
+- Removed _Cordova_ hardware back navigation system
 - Enabled _swipe back_ functionality
 - Updated router direction to work with hardware back button
+- Using _Capacitor_ `StatusBar`
+
+### Removed
+- Removed all _Cordova_ references
+- Removed _translucent_ tool bar for compatibility
 
 ## [0.3.0proto]
 ### Changed
