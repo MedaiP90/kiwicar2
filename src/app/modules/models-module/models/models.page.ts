@@ -1,6 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { AbstractBackNavigationPage } from '../../../utils/abstract-back-navigation';
-import { BackNavigationService } from '../../../services/back-navigation.service';
 import { DataFetcherService } from 'src/app/services/data-fetcher.service';
 import { IModel } from 'src/app/interfaces/model.interface';
 import { IManufacturer } from 'src/app/interfaces/manufacturer.interface';
@@ -12,7 +10,7 @@ import { LoadingController } from '@ionic/angular';
   templateUrl: './models.page.html',
   styleUrls: ['./models.page.scss'],
 })
-export class ModelsPage extends AbstractBackNavigationPage implements OnInit {
+export class ModelsPage implements OnInit {
 
   public selectedManufacturer: IManufacturer;
   public models: IModel[];
@@ -20,12 +18,10 @@ export class ModelsPage extends AbstractBackNavigationPage implements OnInit {
   private loader: HTMLIonLoadingElement;
 
   constructor(
-    backNavigationService: BackNavigationService,
     private dataFetchService: DataFetcherService,
     private comparisonsService: ComparisonService,
     private loadingController: LoadingController
   ) {
-    super(backNavigationService, { toHome: false, inRoot: false });
     this.selectedManufacturer = undefined;
     this.models = [];
     this.loader = undefined;

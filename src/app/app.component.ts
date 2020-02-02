@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
-
 import { Platform, MenuController } from '@ionic/angular';
-import { SplashScreen } from '@ionic-native/splash-screen/ngx';
-import { StatusBar } from '@ionic-native/status-bar/ngx';
+import { Plugins, StatusBarStyle } from '@capacitor/core';
 import { TranslateConfigService } from './services/translate-config.service';
+
+const { SplashScreen, StatusBar } = Plugins;
 
 @Component({
   selector: 'app-root',
@@ -31,13 +31,16 @@ export class AppComponent {
       title: 'MENU.saved-searches',
       url: '/searches',
       icon: 'bookmark'
+    },
+    {
+      title: 'MENU.comparisons',
+      url: '/comparisons',
+      icon: 'git-compare'
     }
   ];
 
   constructor(
     private platform: Platform,
-    private splashScreen: SplashScreen,
-    private statusBar: StatusBar,
     private translationConfigService: TranslateConfigService,
     private menuController: MenuController
   ) {
@@ -45,18 +48,40 @@ export class AppComponent {
   }
 
   private initializeApp(): void {
-    this.platform.ready().then(() => {
-      this.statusBar.overlaysWebView(true);
-      this.statusBar.styleBlackTranslucent();
+    this.platform.ready().then(async () => {
+      // Status bar
+      await this.initializeStatusBar();
 
       // Translate
       this.translationConfigService.setTranslation();
 
-      this.splashScreen.hide();
+      await this.hideSplash();
     });
+  }
+
+  private async initializeStatusBar(): Promise<void> {
+    try {
+      await StatusBar.setStyle({ style: StatusBarStyle.Dark });
+    } catch (error) {
+      console.error(this.constructor.name, 'error setting status bar style', error);
+    }
+
+    try {
+      await StatusBar.setBackgroundColor({ color: '#9C9EA3' });
+    } catch (error) {
+      console.error(this.constructor.name, 'error setting status bar color', error);
+    }
   }
 
   public async closeMenu(): Promise<boolean> {
     return this.menuController.close();
+  }
+
+  private async hideSplash(): Promise<void> {
+    try {
+        await SplashScreen.hide();
+    } catch (error) {
+        console.error('error hiding splash screen', error);
+    }
   }
 }

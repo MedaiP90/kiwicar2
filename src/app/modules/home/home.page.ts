@@ -1,32 +1,38 @@
 import { Component, OnInit } from '@angular/core';
-import { AbstractBackNavigationPage } from '../../utils/abstract-back-navigation';
-import { BackNavigationService } from '../../services/back-navigation.service';
-import { PopoverController, LoadingController } from '@ionic/angular';
+import { Plugins, PluginListenerHandle } from '@capacitor/core';
+import { PopoverController, LoadingController, AlertController } from '@ionic/angular';
 import { PopoverComponent } from '../popover/popover.component';
 import { DataFetcherService } from 'src/app/services/data-fetcher.service';
 import { Router } from '@angular/router';
 import { IManufacturer } from 'src/app/interfaces/manufacturer.interface';
+import { TranslateService } from '@ngx-translate/core';
+
+const { App } = Plugins;
 
 @Component({
   selector: 'app-home',
   templateUrl: 'home.page.html',
   styleUrls: ['home.page.scss'],
 })
-export class HomePage extends AbstractBackNavigationPage implements OnInit {
+export class HomePage implements OnInit {
 
   public manufacturers;
 
   private loader: HTMLIonLoadingElement;
+  private handler: PluginListenerHandle;
+  private confirmExitAlert: HTMLIonAlertElement;
 
   constructor(
-    backNavigationService: BackNavigationService,
     private popoverController: PopoverController,
     private dataFetchService: DataFetcherService,
     private router: Router,
-    private loadingController: LoadingController
+    private loadingController: LoadingController,
+    private alertController: AlertController,
+    private translateService: TranslateService
   ) {
-    super(backNavigationService, { toHome: false, inRoot: true });
     this.loader = undefined;
+    this.handler = undefined;
+    this.confirmExitAlert = undefined;
   }
 
   public async ngOnInit(): Promise<void> {
@@ -37,6 +43,16 @@ export class HomePage extends AbstractBackNavigationPage implements OnInit {
       (m1: IManufacturer, m2: IManufacturer) => m1.name.toLowerCase().localeCompare(m2.name.toLowerCase())
     );
     await this.loader.dismiss();
+  }
+
+  public ionViewDidEnter() {
+    this.handler = App.addListener('backButton', () => App.exitApp());
+  }
+
+  public ionViewDidLeave() {
+    if (this.handler !== undefined) {
+      this.handler.remove();
+    }
   }
 
   public async presentPopover() {

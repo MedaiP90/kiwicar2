@@ -1,6 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { BackNavigationService } from 'src/app/services/back-navigation.service';
-import { AbstractBackNavigationPage } from 'src/app/utils/abstract-back-navigation';
 import { ComparisonService } from 'src/app/services/comparison.service';
 import { IModel } from 'src/app/interfaces/model.interface';
 import { KeyValue } from '@angular/common';
@@ -10,15 +8,13 @@ import { KeyValue } from '@angular/common';
   templateUrl: './comparisons.page.html',
   styleUrls: ['./comparisons.page.scss'],
 })
-export class ComparisonsPage extends AbstractBackNavigationPage implements OnInit {
+export class ComparisonsPage implements OnInit {
 
   public comparisons: IModel[];
 
   constructor(
-    backNavigationService: BackNavigationService,
     private comparisonsService: ComparisonService
   ) {
-    super(backNavigationService, { toHome: false, inRoot: false });
     this.comparisons = [];
   }
 
