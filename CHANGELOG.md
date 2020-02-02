@@ -1,6 +1,8 @@
 # KiwiCar 2 changelog
 
 ## [Unreleased]
+
+## [0.4.6proto]
 ### Changed
 - Updated `README.md`
 - Migrated to _Capacitor_
