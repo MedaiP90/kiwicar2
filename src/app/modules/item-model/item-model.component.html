@@ -1,10 +1,13 @@
 <ion-card class="car-models">
-  <ion-thumbnail [class.replacement]="img === undefined">
+  <ion-thumbnail
+    [class.replacement]="img === undefined"
+    [routerLink]="['/models', model.manufacturer.name, model.id]"
+  >
     <img *ngIf="img !== undefined" [src]="img" />
     <img *ngIf="img === undefined" src="../../../assets/images/placeholder.png" />
   </ion-thumbnail>
   <ion-checkbox mode="ios" [(ngModel)]="isChecked" (ionChange)="inComparison()"></ion-checkbox>
-  <ion-card-header>
+  <ion-card-header [routerLink]="['/models', model.manufacturer.name, model.id]">
     <ion-card-subtitle>
       {{ model.manufacturer.name }}
     </ion-card-subtitle>
@@ -15,7 +18,7 @@
       <img [src]="model.manufacturer.logo" class="fab-logo" />
     </ion-fab-button>
   </ion-card-header>
-  <ion-card-content>
+  <ion-card-content [routerLink]="['/models', model.manufacturer.name, model.id]">
     <ion-list>
       <ion-label *ngFor="let key of keys" class="item-data" lines="none">
         {{ key }}: <b>{{ model.data[key] }}</b>

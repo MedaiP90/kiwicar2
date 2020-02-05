@@ -19,7 +19,7 @@ export class AppComponent {
     },
     {
       title: 'MENU.models-comparison',
-      url: '/models/all-models',
+      url: '/models',
       icon: 'checkmark'
     },
     {

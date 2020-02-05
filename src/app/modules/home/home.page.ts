@@ -1,11 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { Plugins, PluginListenerHandle } from '@capacitor/core';
-import { PopoverController, LoadingController, AlertController } from '@ionic/angular';
+import { PopoverController, LoadingController } from '@ionic/angular';
 import { PopoverComponent } from '../popover/popover.component';
 import { DataFetcherService } from 'src/app/services/data-fetcher.service';
 import { Router } from '@angular/router';
 import { IManufacturer } from 'src/app/interfaces/manufacturer.interface';
-import { TranslateService } from '@ngx-translate/core';
 
 const { App } = Plugins;
 
@@ -20,19 +19,15 @@ export class HomePage implements OnInit {
 
   private loader: HTMLIonLoadingElement;
   private handler: PluginListenerHandle;
-  private confirmExitAlert: HTMLIonAlertElement;
 
   constructor(
     private popoverController: PopoverController,
     private dataFetchService: DataFetcherService,
     private router: Router,
-    private loadingController: LoadingController,
-    private alertController: AlertController,
-    private translateService: TranslateService
+    private loadingController: LoadingController
   ) {
     this.loader = undefined;
     this.handler = undefined;
-    this.confirmExitAlert = undefined;
   }
 
   public async ngOnInit(): Promise<void> {
@@ -63,10 +58,4 @@ export class HomePage implements OnInit {
 
     return await popover.present();
   }
-
-  public async openManufacturer(manufacturer: IManufacturer) {
-    this.dataFetchService.setSelectedManufacturer(manufacturer);
-    await this.router.navigate(['models', 'models']);
-  }
-
 }

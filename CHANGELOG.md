@@ -1,6 +1,12 @@
 # KiwiCar 2 changelog
 
 ## [Unreleased]
+### Changed
+- Improved routing strategy
+
+### Added
+- Added `ModelPage`
+- Added some info to `ModelPage`
 
 ## [0.4.6proto]
 ### Changed

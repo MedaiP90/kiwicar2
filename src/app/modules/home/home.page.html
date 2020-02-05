@@ -18,8 +18,8 @@
   <div class="padding">
     <ion-card
       *ngFor="let manufacturer of manufacturers"
-      (click)="openManufacturer(manufacturer)"
       class="car-models"
+      [routerLink]="['/models', manufacturer.name]"
     >
       <ion-thumbnail>
         <img [src]="manufacturer.logo" />

@@ -4,6 +4,7 @@ import { IModel } from 'src/app/interfaces/model.interface';
 import { IManufacturer } from 'src/app/interfaces/manufacturer.interface';
 import { ComparisonService } from 'src/app/services/comparison.service';
 import { LoadingController } from '@ionic/angular';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-models',
@@ -20,7 +21,8 @@ export class ModelsPage implements OnInit {
   constructor(
     private dataFetchService: DataFetcherService,
     private comparisonsService: ComparisonService,
-    private loadingController: LoadingController
+    private loadingController: LoadingController,
+    private route: ActivatedRoute
   ) {
     this.selectedManufacturer = undefined;
     this.models = [];
@@ -31,7 +33,8 @@ export class ModelsPage implements OnInit {
     this.loader = await this.loadingController.create({ message: 'Loading...' });
 
     await this.loader.present();
-    this.selectedManufacturer = this.dataFetchService.getSelectedManufacturer();
+    const manufacturerName = this.route.snapshot.paramMap.get('house');
+    this.selectedManufacturer = this.dataFetchService.getManufacturerByName(manufacturerName);
     this.models = this.dataFetchService.getModelsByManufacturer(this.selectedManufacturer)
       .sort((model1: IModel, model2: IModel) => model1.name.toLowerCase().localeCompare(model2.name.toLowerCase()));
     await this.loader.dismiss();
