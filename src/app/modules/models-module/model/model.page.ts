@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { DataFetcherService } from 'src/app/services/data-fetcher.service';
-import { ComparisonService } from 'src/app/services/comparison.service';
 import { LoadingController } from '@ionic/angular';
 import { ActivatedRoute } from '@angular/router';
 import { IModel } from 'src/app/interfaces/model.interface';
@@ -20,7 +19,6 @@ export class ModelPage extends AbstractGoToTopPage implements OnInit {
 
   constructor(
     private dataFetchService: DataFetcherService,
-    private comparisonsService: ComparisonService,
     private loadingController: LoadingController,
     private route: ActivatedRoute
   ) {

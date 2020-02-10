@@ -1,5 +1,5 @@
 // tslint:disable: triple-equals
-import { Injectable, OnInit } from '@angular/core';
+import { Injectable } from '@angular/core';
 import { Plugins } from '@capacitor/core';
 import { IModel } from '../interfaces/model.interface';
 
@@ -8,7 +8,7 @@ const { Storage } = Plugins;
 @Injectable({
   providedIn: 'root'
 })
-export class FavoritesService implements OnInit {
+export class FavoritesService {
 
   public allCarFavs: IModel[];
 
@@ -20,8 +20,6 @@ export class FavoritesService implements OnInit {
     this.favSearchesKey = 'favSearches';
     this.allCarFavs = [];
   }
-
-  public async ngOnInit(): Promise<void> { await this.initFavs(); }
 
   public async saveCarToFavourites(car: IModel): Promise<void> {
     if (this.isNotModelPresent(car)) {
@@ -43,7 +41,7 @@ export class FavoritesService implements OnInit {
     return !this.isNotModelPresent(car);
   }
 
-  private async initFavs(): Promise<void> {
+  public async initFavs(): Promise<void> {
     const ret = await Storage.get({ key: this.favCarsKey });
     this.allCarFavs = ret == undefined
       ? []

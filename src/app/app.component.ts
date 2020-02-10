@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { Platform, MenuController } from '@ionic/angular';
 import { Plugins, StatusBarStyle } from '@capacitor/core';
 import { TranslateConfigService } from './services/translate-config.service';
+import { FavoritesService } from './services/favorites.service';
 
 const { SplashScreen, StatusBar } = Plugins;
 
@@ -42,7 +43,8 @@ export class AppComponent {
   constructor(
     private platform: Platform,
     private translationConfigService: TranslateConfigService,
-    private menuController: MenuController
+    private menuController: MenuController,
+    private favouritesService: FavoritesService
   ) {
     this.initializeApp();
   }
@@ -54,6 +56,9 @@ export class AppComponent {
 
       // Translate
       this.translationConfigService.setTranslation();
+
+      // Load favourites
+      await this.favouritesService.initFavs();
 
       await this.hideSplash();
     });

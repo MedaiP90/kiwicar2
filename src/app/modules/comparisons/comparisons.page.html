@@ -1,7 +1,7 @@
 <ion-header mode="ios" no-border no-shadow>
   <ion-toolbar>
     <ion-buttons slot="start">
-      <ion-back-button></ion-back-button>
+      <ion-menu-button></ion-menu-button>
     </ion-buttons>
     <ion-title (click)="goToTop()">{{ 'COMPARISONS.title' | translate }}</ion-title>
     <ion-buttons slot="end">
@@ -43,7 +43,7 @@
             <td><b>{{ 'COMPARISONS.manufacturer' | translate }}</b></td>
             <td><b>{{ 'COMPARISONS.price' | translate }}</b></td>
             <td class="data-comparison"><b>{{ 'COMPARISONS.data' | translate }}</b></td>
-            <td colspan="2"><b>{{ 'COMPARISONS.actions' | translate }}</b></td>
+            <td colspan="3"><b>{{ 'COMPARISONS.actions' | translate }}</b></td>
           </tr>
           <tr class="row" *ngFor="let model of comparisons">
             <td><b class="bigger">{{ model.name }}</b></td>
@@ -58,8 +58,13 @@
               </ion-fab-button>
             </td>
             <td class="view-button">
-              <ion-fab-button size="small">
+              <ion-fab-button size="small" [routerLink]="['/models', model.manufacturer.name, model.id]">
                 <ion-icon name="eye"></ion-icon>
+              </ion-fab-button>
+            </td>
+            <td class="view-button">
+              <ion-fab-button size="small" (click)="addToFavs(model)">
+                <ion-icon name="heart" [class.fav]="isFav(model)"></ion-icon>
               </ion-fab-button>
             </td>
           </tr>

@@ -3,6 +3,7 @@
 ## [Unreleased]
 ### Changed
 - Improved routing strategy
+- Enanced favourites experience
 
 ### Added
 - Added `ModelPage`

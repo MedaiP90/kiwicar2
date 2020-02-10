@@ -47,6 +47,12 @@ export class DataFetcherService {
   }
 
   public getModelFromManufacturerAndId(m: string, id: string): IModel {
+    if (this.modelsManuf[m].length === 0) {
+      this.fetchModelByManufacturer(
+        this.manufacturers.find((man: IManufacturer) => man.name === m)
+      );
+    }
+
     return this.modelsManuf[m].find((model: IModel) => model.id === Number(id));
   }
 
@@ -77,6 +83,8 @@ export class DataFetcherService {
   }
 
   private fetchModelByManufacturer(m: IManufacturer): void {
+    if (m === undefined) { return; }
+
     const testData = {
       alimentazione: 'benzina',
       potenza: '95cv',
