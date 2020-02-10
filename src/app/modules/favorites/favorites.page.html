@@ -16,7 +16,7 @@
 
 <ion-content fullscreen="true">
     <div class="padding">
-        <ion-list *ngIf="models.length === 0" class="no-element">
+        <ion-list *ngIf="favouritesService.allCarFavs.length === 0" class="no-element">
             <ion-item lines="none" class="no-element">
               <ion-label>
                 {{ 'FAVORITES.nofav' | translate }}
@@ -27,7 +27,7 @@
             </ion-button>
         </ion-list>
         <app-item-model
-            *ngFor="let model of models"
+            *ngFor="let model of favouritesService.allCarFavs"
             [model]="model"
             [img]="model.images.length > 0 ? model.images[0] : undefined"
         ></app-item-model>

@@ -16,21 +16,17 @@ export class ItemModelComponent implements OnInit {
   public keys: string[];
   public isChecked: boolean;
 
-  private fav: boolean;
-
   constructor(
     private favouritesService: FavoritesService,
     private comparisonsService: ComparisonService
   ) {
     this.keys = [];
     this.isChecked = false;
-    this.fav = false;
   }
 
   public async ngOnInit(): Promise<void> {
     this.keys = Object.keys(this.model.data);
     this.isChecked = this.comparisonsService.isPresent(this.model);
-    await this.getFav();
   }
 
   public inComparison(): void {
@@ -42,7 +38,7 @@ export class ItemModelComponent implements OnInit {
   }
 
   public get isFav(): boolean {
-    return this.fav;
+    return this.favouritesService.isFav(this.model);
   }
 
   public async addToFavs(): Promise<void> {
@@ -51,12 +47,6 @@ export class ItemModelComponent implements OnInit {
     } else {
       await this.favouritesService.saveCarToFavourites(this.model);
     }
-
-    await this.getFav();
-  }
-
-  private async getFav(): Promise<void> {
-    this.fav = await this.favouritesService.isFav(this.model);
   }
 
 }
