@@ -36,7 +36,8 @@
         "amount": "Modelli disponibili"
     },
     "FAVORITES": {
-        "title": "Preferiti"
+        "title": "Preferiti",
+        "nofav": "Ancora nessun preferito"
     },
     "SEARCH": {
         "title": "Ricerca",

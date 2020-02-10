@@ -37,10 +37,6 @@ export class ComparisonsPage extends AbstractGoToTopPage implements OnInit {
     return items.join(', ');
   }
 
-  public isFav(model: IModel): boolean {
-    return false;
-  }
-
   public removeFromComparisons(model: IModel): void {
     this.comparisonsService.remove(model);
   }

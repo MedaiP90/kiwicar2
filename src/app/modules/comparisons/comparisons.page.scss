@@ -24,16 +24,6 @@ ion-fab-button {
     margin: 0px !important;
 }
 
-.fav {
-    --background: var(--dark-color-danger) !important;
-    color: var(--dark-color-danger-contrast) !important;
-}
-
-.nofav {
-    --background: var(--dark-color-light) !important;
-    color: var(--dark-color-light-contrast) !important;
-}
-
 .table[scrollx=true], .table[scrolly=true] {
     position: relative;
     overflow: hidden;

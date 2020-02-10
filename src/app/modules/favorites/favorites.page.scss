@@ -1,2 +1,11 @@
 @import "../../app.component.scss";
 @import "~@ionic/angular/css/core.css";
+
+.no-element {
+    --background: transparent;
+    background-color: transparent;
+    color: var(--dark-color-dark-contrast);
+    width: 100%;
+    text-align: center;
+    font-size: 1.2em;
+}

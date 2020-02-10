@@ -8,6 +8,7 @@
 - Added `ModelPage`
 - Added some info to `ModelPage`
 - Added scroll to top functionality
+- Added fauvorites managment
 
 ## [0.4.6proto]
 ### Changed
