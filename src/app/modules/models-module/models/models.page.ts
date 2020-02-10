@@ -5,13 +5,14 @@ import { IManufacturer } from 'src/app/interfaces/manufacturer.interface';
 import { ComparisonService } from 'src/app/services/comparison.service';
 import { LoadingController } from '@ionic/angular';
 import { ActivatedRoute } from '@angular/router';
+import { AbstractGoToTopPage } from 'src/app/utils/abstract-go-to-top-page';
 
 @Component({
   selector: 'app-models',
   templateUrl: './models.page.html',
   styleUrls: ['./models.page.scss'],
 })
-export class ModelsPage implements OnInit {
+export class ModelsPage extends AbstractGoToTopPage implements OnInit {
 
   public selectedManufacturer: IManufacturer;
   public models: IModel[];
@@ -24,6 +25,7 @@ export class ModelsPage implements OnInit {
     private loadingController: LoadingController,
     private route: ActivatedRoute
   ) {
+    super();
     this.selectedManufacturer = undefined;
     this.models = [];
     this.loader = undefined;

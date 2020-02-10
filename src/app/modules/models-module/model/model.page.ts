@@ -4,13 +4,14 @@ import { ComparisonService } from 'src/app/services/comparison.service';
 import { LoadingController } from '@ionic/angular';
 import { ActivatedRoute } from '@angular/router';
 import { IModel } from 'src/app/interfaces/model.interface';
+import { AbstractGoToTopPage } from 'src/app/utils/abstract-go-to-top-page';
 
 @Component({
   selector: 'app-model',
   templateUrl: './model.page.html',
   styleUrls: ['./model.page.scss'],
 })
-export class ModelPage implements OnInit {
+export class ModelPage extends AbstractGoToTopPage implements OnInit {
 
   public loadedModel: IModel;
   public keys: string[];
@@ -23,6 +24,7 @@ export class ModelPage implements OnInit {
     private loadingController: LoadingController,
     private route: ActivatedRoute
   ) {
+    super();
     this.loader = undefined;
     this.keys = [];
     this.loadedModel = undefined;

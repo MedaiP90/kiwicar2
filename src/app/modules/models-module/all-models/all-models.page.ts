@@ -3,13 +3,14 @@ import { DataFetcherService } from '../../../services/data-fetcher.service';
 import { IModel } from 'src/app/interfaces/model.interface';
 import { ComparisonService } from 'src/app/services/comparison.service';
 import { LoadingController } from '@ionic/angular';
+import { AbstractGoToTopPage } from 'src/app/utils/abstract-go-to-top-page';
 
 @Component({
   selector: 'app-all-models',
   templateUrl: './all-models.page.html',
   styleUrls: ['./all-models.page.scss'],
 })
-export class AllModelsPage implements OnInit {
+export class AllModelsPage extends AbstractGoToTopPage implements OnInit {
 
   public models: IModel[];
   public dataFetcherService: DataFetcherService;
@@ -21,6 +22,7 @@ export class AllModelsPage implements OnInit {
     private comparisonsService: ComparisonService,
     private loadingController: LoadingController
   ) {
+    super();
     this.models = [];
     this.loader = undefined;
     this.dataFetcherService = dataFetcherService;

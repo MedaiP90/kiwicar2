@@ -3,7 +3,7 @@
     <ion-buttons slot="start">
       <ion-back-button></ion-back-button>
     </ion-buttons>
-    <ion-title>{{ 'COMPARISONS.title' | translate }}</ion-title>
+    <ion-title (click)="goToTop()">{{ 'COMPARISONS.title' | translate }}</ion-title>
     <ion-buttons slot="end">
       <ion-button class="spacer">
           <ion-icon name="search"></ion-icon>

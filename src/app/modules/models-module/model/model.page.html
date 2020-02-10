@@ -3,7 +3,7 @@
     <ion-buttons slot="start">
       <ion-back-button></ion-back-button>
     </ion-buttons>
-    <ion-title>{{ loadedModel == undefined ? '' : loadedModel.name }}</ion-title>
+    <ion-title (click)="goToTop()">{{ loadedModel == undefined ? '' : loadedModel.name }}</ion-title>
     <ion-buttons slot="end">
       <ion-button shape="round">
         <ion-icon name="more"></ion-icon>

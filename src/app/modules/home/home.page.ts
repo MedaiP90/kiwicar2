@@ -5,6 +5,7 @@ import { PopoverComponent } from '../popover/popover.component';
 import { DataFetcherService } from 'src/app/services/data-fetcher.service';
 import { Router } from '@angular/router';
 import { IManufacturer } from 'src/app/interfaces/manufacturer.interface';
+import { AbstractGoToTopPage } from 'src/app/utils/abstract-go-to-top-page';
 
 const { App } = Plugins;
 
@@ -13,7 +14,7 @@ const { App } = Plugins;
   templateUrl: 'home.page.html',
   styleUrls: ['home.page.scss'],
 })
-export class HomePage implements OnInit {
+export class HomePage extends AbstractGoToTopPage implements OnInit {
 
   public manufacturers;
 
@@ -26,6 +27,7 @@ export class HomePage implements OnInit {
     private router: Router,
     private loadingController: LoadingController
   ) {
+    super();
     this.loader = undefined;
     this.handler = undefined;
   }

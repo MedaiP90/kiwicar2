@@ -3,7 +3,7 @@
     <ion-buttons slot="start">
       <ion-back-button></ion-back-button>
     </ion-buttons>
-    <ion-title>{{ 'SEARCH.title' | translate }}</ion-title>
+    <ion-title (click)="goToTop()">{{ 'SEARCH.title' | translate }}</ion-title>
     <ion-buttons slot="end">
       <ion-button shape="round" (click)="onSaveClick()">
         <ion-icon name="save"></ion-icon>
