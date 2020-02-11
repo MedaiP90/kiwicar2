@@ -16,7 +16,10 @@
 
 <ion-content fullscreen="true">
     <div class="padding">
-        <ion-list *ngIf="favouritesService.allCarFavs.length === 0" class="no-element">
+        <ion-list
+            *ngIf="favouritesService.allCarFavs == undefined || favouritesService.allCarFavs.length === 0"
+            class="no-element"
+        >
             <ion-item lines="none" class="no-element">
               <ion-label>
                 {{ 'FAVORITES.nofav' | translate }}
