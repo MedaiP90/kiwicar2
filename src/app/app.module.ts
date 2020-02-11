@@ -19,8 +19,8 @@ export function LanguageLoader(http: HttpClient) {
 
 const ionicConfig: IonicConfig = {
   animated: true,
-  swipeBackEnabled: true,
-  experimentalTransitionShadow: true,
+  swipeBackEnabled: false,
+  experimentalTransitionShadow: false,
 };
 
 @NgModule({

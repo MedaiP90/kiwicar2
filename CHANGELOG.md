@@ -1,6 +1,9 @@
 # KiwiCar 2 changelog
 
 ## [Unreleased]
+### Changed
+- Changed some icons
+- Removed unneeded animations
 
 ## [0.6.6proto]
 ### Changed

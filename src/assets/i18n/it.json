@@ -14,8 +14,8 @@
         "title": "Changelog",
         "changed-title": "Cambiamenti",
         "added-title": "Aggiunte",
-        "changed": "<ul><li>Migliorata la navigazione in app</li><li>Migliorata la gestione dei preferiti</li><li>Migliorata la gestione dei confronti</li></ul>",
-        "added": "<ul><li>Aggiunta la pagina di dettaglio dei modelli</li><li>Aggiunte info alla pagina dei dettagli</li><li>Aggiunta la funzionalità 'scroll to top' quando si preme sul titolo di una pagina</li><li>Aggiunta la gestione dei preferiti</li><li>Inserito il changelog nella pagina delle informazioni</li></ul>"
+        "changed": "<ul><li>Cambiata l'icona dei preferiti</li></ul>",
+        "added": "<ul><li>Rimosse le animazioni non necessarie</li></ul>"
     },
     "ALL_MODELS": {
         "title": "Tutti i modelli",
