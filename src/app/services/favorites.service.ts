@@ -10,7 +10,7 @@ const { Storage } = Plugins;
 })
 export class FavoritesService {
 
-  public allCarFavs: IModel[];
+  public allCarFavs: IModel[] = [];
 
   private favCarsKey: string;
   private favSearchesKey: string;
@@ -22,6 +22,8 @@ export class FavoritesService {
   }
 
   public async saveCarToFavourites(car: IModel): Promise<void> {
+    if (this.allCarFavs == undefined) { this.allCarFavs = []; }
+
     if (this.isNotModelPresent(car)) {
       this.allCarFavs.push(car);
       await this.toMemory(this.favCarsKey, JSON.stringify(this.allCarFavs));
@@ -29,6 +31,8 @@ export class FavoritesService {
   }
 
   public async removeCarFromFavourites(car: IModel): Promise<void> {
+    if (this.allCarFavs == undefined) { return; }
+
     const index = this.allCarFavs.findIndex((model: IModel) => model.id === car.id);
 
     if (index > -1) {
@@ -53,6 +57,8 @@ export class FavoritesService {
   }
 
   private isNotModelPresent(item: IModel): boolean {
-    return this.allCarFavs.findIndex((m: IModel) => m.id === item.id) === -1;
+    return this.allCarFavs == undefined
+      ? true
+      : this.allCarFavs.findIndex((m: IModel) => m.id === item.id) === -1;
   }
 }
