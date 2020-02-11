@@ -1,6 +1,8 @@
 # KiwiCar 2 changelog
 
 ## [Unreleased]
+
+## [0.6.6proto]
 ### Changed
 - Improved routing strategy
 - Enanced favourites experience
