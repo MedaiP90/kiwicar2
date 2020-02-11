@@ -26,7 +26,7 @@ export class AppComponent {
     {
       title: 'MENU.favorites',
       url: '/favorites',
-      icon: 'star'
+      icon: 'heart'
     },
     {
       title: 'MENU.saved-searches',
