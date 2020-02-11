@@ -19,12 +19,23 @@
         <ion-card-title>
           {{ 'APP.app-name' | translate }} {{ 'INFORMATIONS.version' | translate }}{{ version }}
         </ion-card-title>
+        <ion-card-subtitle>
+          {{ 'CHANGELOG.title' | translate }}
+        </ion-card-subtitle>
       </ion-card-header>
+      <ion-card-content>
+        <ion-list>
+          <h2 class="changelog">{{ 'CHANGELOG.changed-title' | translate }}</h2>
+          <ion-label class="item-data" lines="none" [innerHTML]="'CHANGELOG.changed' | translate"></ion-label>
+          <h2 class="changelog">{{ 'CHANGELOG.added-title' | translate }}</h2>
+          <ion-label class="item-data" lines="none" [innerHTML]="'CHANGELOG.added' | translate"></ion-label>
+        </ion-list>
+      </ion-card-content>
     </ion-card>
   </div>
 </ion-content>
 
-<ion-footer class="copyright" text-center no-border no-shadow>
+<ion-footer class="copyright ion-text-center" no-border no-shadow>
   <ion-list class="copyright">
     <ion-label class="copyright" disabled="true" lines="none">
       &copy; Copyright {{ copyrightTime }}, CoMa Softwares

@@ -6,7 +6,7 @@
     <img *ngIf="img !== undefined" [src]="img" />
     <img *ngIf="img === undefined" src="../../../assets/images/placeholder.png" />
   </ion-thumbnail>
-  <ion-checkbox mode="ios" [(ngModel)]="isChecked" (ionChange)="inComparison()"></ion-checkbox>
+  <ion-checkbox mode="ios" [(ngModel)]="isChecked"></ion-checkbox>
   <ion-fab-button size="small" class="fav-fab" (click)="addToFavs()">
     <ion-icon name="heart" [class.fav]="isFav"></ion-icon>
   </ion-fab-button>

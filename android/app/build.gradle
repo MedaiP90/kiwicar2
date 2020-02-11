@@ -8,8 +8,8 @@ android {
         applicationId "com.comasoftware.kiwicartwo"
         minSdkVersion 21
         targetSdkVersion 28
-        versionCode 603
-        versionName '0.6.3'
+        versionCode 605
+        versionName '0.6.5'
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
     buildTypes {

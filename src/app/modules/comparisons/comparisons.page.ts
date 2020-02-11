@@ -48,7 +48,7 @@ export class ComparisonsPage extends AbstractGoToTopPage implements OnInit {
   }
 
   public async addToFavs(model: IModel): Promise<void> {
-    if (this.isFav) {
+    if (this.isFav(model)) {
       await this.favouritesService.removeCarFromFavourites(model);
     } else {
       await this.favouritesService.saveCarToFavourites(model);

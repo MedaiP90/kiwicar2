@@ -14,23 +14,24 @@ export class ItemModelComponent implements OnInit {
   @Input() img: string | undefined;
 
   public keys: string[];
-  public isChecked: boolean;
 
   constructor(
     private favouritesService: FavoritesService,
     private comparisonsService: ComparisonService
   ) {
     this.keys = [];
-    this.isChecked = false;
   }
 
   public async ngOnInit(): Promise<void> {
     this.keys = Object.keys(this.model.data);
-    this.isChecked = this.comparisonsService.isPresent(this.model);
   }
 
-  public inComparison(): void {
-    if (this.isChecked) {
+  public get isChecked(): boolean { return this.comparisonsService.isPresent(this.model); }
+
+  public set isChecked(value: boolean) { this.inComparison(value); }
+
+  private inComparison(value: boolean): void {
+    if (value) {
       this.comparisonsService.add(this.model);
     } else {
       this.comparisonsService.remove(this.model);

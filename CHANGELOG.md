@@ -4,12 +4,14 @@
 ### Changed
 - Improved routing strategy
 - Enanced favourites experience
+- Enanced comparisons experience
 
 ### Added
 - Added `ModelPage`
 - Added some info to `ModelPage`
 - Added scroll to top functionality
 - Added fauvorites managment
+- Inserted changelog in `InfoPage`
 
 ## [0.4.6proto]
 ### Changed
