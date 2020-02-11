@@ -13,21 +13,16 @@ export class DataFetcherService {
   private manufacturers: IManufacturer[];
   private modelsManuf: IModel[][];
   private query: string;
-  private selectedManufacturer: IManufacturer;
 
   constructor() {
     this.manufacturers = [];
     this.modelsManuf = [];
     this.query = '';
-    this.selectedManufacturer = undefined;
     this.allModelsFilter = '';
   }
 
   public getQuery(): string { return this.query; }
   public setQuery(q: string) { this.query = q; }
-
-  public getSelectedManufacturer(): IManufacturer { return this.selectedManufacturer; }
-  public setSelectedManufacturer(m: IManufacturer) { this.selectedManufacturer = m; }
 
   public get AllModels(): IModel[] {
     if (this.manufacturers.length === 0) {
@@ -51,12 +46,26 @@ export class DataFetcherService {
     return this.modelsManuf[m.name];
   }
 
+  public getModelFromManufacturerAndId(m: string, id: string): IModel {
+    if (this.modelsManuf[m].length === 0) {
+      this.fetchModelByManufacturer(
+        this.manufacturers.find((man: IManufacturer) => man.name === m)
+      );
+    }
+
+    return this.modelsManuf[m].find((model: IModel) => model.id === Number(id));
+  }
+
   public get AllManufacturers(): IManufacturer[] {
     if (this.manufacturers.length === 0) {
       this.fetchManufacturers();
     }
 
     return this.manufacturers;
+  }
+
+  public getManufacturerByName(m: string): IManufacturer {
+    return this.manufacturers.find((manu: IManufacturer) => manu.name === m);
   }
 
   private fetchManufacturers(): void {
@@ -74,6 +83,8 @@ export class DataFetcherService {
   }
 
   private fetchModelByManufacturer(m: IManufacturer): void {
+    if (m === undefined) { return; }
+
     const testData = {
       alimentazione: 'benzina',
       potenza: '95cv',

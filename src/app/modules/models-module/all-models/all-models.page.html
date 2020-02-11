@@ -3,7 +3,7 @@
     <ion-buttons slot="start">
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
-    <ion-title>{{ 'ALL_MODELS.title' | translate }}</ion-title>
+    <ion-title (click)="goToTop()">{{ 'ALL_MODELS.title' | translate }}</ion-title>
     <ion-buttons slot="end">
       <ion-button [class.spacer]="disabled" [disabled]="disabled" [routerLink]="['/comparisons']" shape="round">
           <ion-icon name="git-compare"></ion-icon>

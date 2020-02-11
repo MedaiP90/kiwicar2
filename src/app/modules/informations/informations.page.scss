@@ -6,6 +6,12 @@
     color: var(--dark-color-dark-contrast);
 }
 
+.changelog {
+    color: var(--dark-color-dark);
+    font-weight: bold;
+    padding: 4px !important;
+}
+
 ion-card-title {
     width: 100% !important;
     text-align: center !important;

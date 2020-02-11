@@ -10,6 +10,10 @@
     font-size: 1.2em;
 }
 
+.fav {
+    color: var(--dark-color-danger) !important;
+}
+
 .list-content {
     margin-right: 8px !important;
     margin-left: 8px !important;
@@ -22,16 +26,6 @@
 ion-fab-button {
     --box-shadow: 0px 3px 3px 0px rgba(0, 0, 0, 0.35) !important;
     margin: 0px !important;
-}
-
-.fav {
-    --background: var(--dark-color-danger) !important;
-    color: var(--dark-color-danger-contrast) !important;
-}
-
-.nofav {
-    --background: var(--dark-color-light) !important;
-    color: var(--dark-color-light-contrast) !important;
 }
 
 .table[scrollx=true], .table[scrolly=true] {

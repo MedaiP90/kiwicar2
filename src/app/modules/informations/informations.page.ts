@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { DeviceInfo, Plugins } from '@capacitor/core';
 import * as moment from 'moment';
+import { AbstractGoToTopPage } from 'src/app/utils/abstract-go-to-top-page';
 
 const { DeviceInfo, Device } = Plugins;
 
@@ -9,12 +10,13 @@ const { DeviceInfo, Device } = Plugins;
   templateUrl: './informations.page.html',
   styleUrls: ['./informations.page.scss'],
 })
-export class InformationsPage implements OnInit {
+export class InformationsPage extends AbstractGoToTopPage implements OnInit {
 
   public version: string;
   public copyrightTime: string;
 
   constructor() {
+    super();
     this.version = '';
     this.copyrightTime = '';
   }

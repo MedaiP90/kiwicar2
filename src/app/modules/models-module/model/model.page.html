@@ -1,0 +1,29 @@
+<ion-header mode="ios" no-border no-shadow>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title (click)="goToTop()">{{ loadedModel == undefined ? '' : loadedModel.name }}</ion-title>
+    <ion-buttons slot="end">
+      <ion-button shape="round">
+        <ion-icon name="more"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="padding" *ngIf="loadedModel != undefined">
+    <ion-card-header class="model-main-info">
+      <ion-card-subtitle class="model-main-info">
+        {{ loadedModel.manufacturer.name }}
+      </ion-card-subtitle>
+      <ion-card-title class="model-main-info model-name">
+        {{ loadedModel.name }}
+      </ion-card-title>
+      <ion-fab-button class="fab-logo-button">
+        <img [src]="loadedModel.manufacturer.logo" class="fab-logo" />
+      </ion-fab-button>
+    </ion-card-header>
+  </div>
+</ion-content>

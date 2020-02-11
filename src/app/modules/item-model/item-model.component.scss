@@ -3,8 +3,8 @@
 
 ion-checkbox {
     position: absolute;
-    top: 8px;
-    right: 8px;
+    top: 16px;
+    right: 16px;
 }
 
 .replacement {
@@ -24,4 +24,21 @@ ion-checkbox {
     b {
         font-size: 1.5em;
     }
+}
+
+.fav-fab {
+    --background: transparent !important;
+    border: none !important;
+
+    position: absolute;
+    top: 0px;
+    left: 0px;
+
+    ion-icon {
+        color: var(--dark-color-dark-contrast);
+    }
+}
+
+.fav {
+    color: var(--dark-color-danger) !important;
 }

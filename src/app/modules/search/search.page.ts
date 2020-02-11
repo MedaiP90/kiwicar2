@@ -2,13 +2,14 @@ import { Component, OnInit } from '@angular/core';
 import { DataFetcherService } from '../../services/data-fetcher.service';
 import { ToastController } from '@ionic/angular';
 import { TranslateService } from '@ngx-translate/core';
+import { AbstractGoToTopPage } from 'src/app/utils/abstract-go-to-top-page';
 
 @Component({
   selector: 'app-search',
   templateUrl: './search.page.html',
   styleUrls: ['./search.page.scss'],
 })
-export class SearchPage implements OnInit {
+export class SearchPage extends AbstractGoToTopPage implements OnInit {
 
   public query: string;
 
@@ -17,6 +18,7 @@ export class SearchPage implements OnInit {
     private toastController: ToastController,
     private translateService: TranslateService
   ) {
+    super();
     this.query = '';
   }
 

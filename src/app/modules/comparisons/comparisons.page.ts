@@ -2,19 +2,23 @@ import { Component, OnInit } from '@angular/core';
 import { ComparisonService } from 'src/app/services/comparison.service';
 import { IModel } from 'src/app/interfaces/model.interface';
 import { KeyValue } from '@angular/common';
+import { AbstractGoToTopPage } from 'src/app/utils/abstract-go-to-top-page';
+import { FavoritesService } from 'src/app/services/favorites.service';
 
 @Component({
   selector: 'app-comparisons',
   templateUrl: './comparisons.page.html',
   styleUrls: ['./comparisons.page.scss'],
 })
-export class ComparisonsPage implements OnInit {
+export class ComparisonsPage extends AbstractGoToTopPage implements OnInit {
 
   public comparisons: IModel[];
 
   constructor(
-    private comparisonsService: ComparisonService
+    private comparisonsService: ComparisonService,
+    private favouritesService: FavoritesService
   ) {
+    super();
     this.comparisons = [];
   }
 
@@ -35,12 +39,20 @@ export class ComparisonsPage implements OnInit {
     return items.join(', ');
   }
 
-  public isFav(model: IModel): boolean {
-    return false;
-  }
-
   public removeFromComparisons(model: IModel): void {
     this.comparisonsService.remove(model);
+  }
+
+  public isFav(model: IModel): boolean {
+    return this.favouritesService.isFav(model);
+  }
+
+  public async addToFavs(model: IModel): Promise<void> {
+    if (this.isFav(model)) {
+      await this.favouritesService.removeCarFromFavourites(model);
+    } else {
+      await this.favouritesService.saveCarToFavourites(model);
+    }
   }
 
 }
