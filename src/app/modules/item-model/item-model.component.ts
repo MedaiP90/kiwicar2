@@ -2,6 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { IModel } from 'src/app/interfaces/model.interface';
 import { ComparisonService } from 'src/app/services/comparison.service';
 import { FavoritesService } from 'src/app/services/favorites.service';
+import { CurrencyFormatter } from 'src/app/utils/currency-formatter';
 
 @Component({
   selector: 'app-item-model',
@@ -14,12 +15,15 @@ export class ItemModelComponent implements OnInit {
   @Input() img: string | undefined;
 
   public keys: string[];
+  public currencyFormatter: CurrencyFormatter;
 
   constructor(
+    currencyFormatter: CurrencyFormatter,
     private favouritesService: FavoritesService,
     private comparisonsService: ComparisonService
   ) {
     this.keys = [];
+    this.currencyFormatter = currencyFormatter;
   }
 
   public async ngOnInit(): Promise<void> {

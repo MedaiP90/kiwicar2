@@ -48,7 +48,7 @@
           <tr class="row" *ngFor="let model of comparisons">
             <td><b class="bigger">{{ model.name }}</b></td>
             <td>{{ model.manufacturer.name }}</td>
-            <td>{{ 'COMPARISONS.from' | translate }} <b>{{ model.price }}€</b></td>
+            <td>{{ 'COMPARISONS.from' | translate }} <b>{{ currencyFormatter.jsFormat(model.price, ('APP.region' | translate), ('APP.currency' | translate)) }}</b></td>
             <td class="data-comparison">
               <ion-label [innerHTML]="modelInfoStringify(model.data)"></ion-label>
             </td>

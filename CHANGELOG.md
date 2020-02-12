@@ -5,6 +5,9 @@
 - Changed some icons
 - Removed unneeded animations
 
+### Added
+- Added an utility to correctly format prices
+
 ## [0.6.6proto]
 ### Changed
 - Improved routing strategy

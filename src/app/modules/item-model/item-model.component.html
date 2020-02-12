@@ -29,7 +29,7 @@
     </ion-list>
     <ion-item lines="none">
       <ion-label class="item-price">
-        {{ 'APP.base-prize' | translate }}: <b>{{ model.price }}€</b>
+        {{ 'APP.base-prize' | translate }}: <b>{{ currencyFormatter.jsFormat(model.price, ('APP.region' | translate), ('APP.currency' | translate)) }}</b>
       </ion-label>
     </ion-item>
   </ion-card-content>

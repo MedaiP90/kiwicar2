@@ -8,13 +8,15 @@
         "search": "Ricerca",
         "save": "Salva",
         "start": "Avvia",
-        "base-prize": "A partire da"
+        "base-prize": "A partire da",
+        "region": "it-IT",
+        "currency": "EUR"
     },
     "CHANGELOG": {
         "title": "Changelog",
         "changed-title": "Cambiamenti",
         "added-title": "Aggiunte",
-        "changed": "<ul><li>Cambiata l'icona dei preferiti</li></ul>",
+        "changed": "<ul><li>Cambiata l'icona dei preferiti</li><li>I prezzi sono ora formattati correttamente</li></ul>",
         "added": "<ul><li>Rimosse le animazioni non necessarie</li></ul>"
     },
     "ALL_MODELS": {

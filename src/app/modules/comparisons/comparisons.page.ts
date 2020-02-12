@@ -4,6 +4,7 @@ import { IModel } from 'src/app/interfaces/model.interface';
 import { KeyValue } from '@angular/common';
 import { AbstractGoToTopPage } from 'src/app/utils/abstract-go-to-top-page';
 import { FavoritesService } from 'src/app/services/favorites.service';
+import { CurrencyFormatter } from 'src/app/utils/currency-formatter';
 
 @Component({
   selector: 'app-comparisons',
@@ -13,13 +14,16 @@ import { FavoritesService } from 'src/app/services/favorites.service';
 export class ComparisonsPage extends AbstractGoToTopPage implements OnInit {
 
   public comparisons: IModel[];
+  public currencyFormatter: CurrencyFormatter;
 
   constructor(
+    currencyFormatter: CurrencyFormatter,
     private comparisonsService: ComparisonService,
     private favouritesService: FavoritesService
   ) {
     super();
     this.comparisons = [];
+    this.currencyFormatter = currencyFormatter;
   }
 
   public ngOnInit(): void {
