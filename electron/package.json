@@ -1,7 +1,7 @@
 {
   "name": "KiwiCar 2",
   "version": "0.6.11",
-  "description": "Un autosalone in tasca",
+  "description": "Un auto-salone in tasca",
   "main": "index.js",
   "scripts": {
     "electron:start": "electron ./"
