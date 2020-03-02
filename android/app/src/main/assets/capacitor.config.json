@@ -1,7 +1,7 @@
 {
   "appId": "com.comasoftware.kiwicartwo",
   "appName": "KiwiCar 2",
-  "appVersion": "1.0.0",
+  "appVersion": "0.6.11",
   "bundledWebRuntime": false,
   "npmClient": "npm",
   "webDir": "www",

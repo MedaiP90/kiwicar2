@@ -7,6 +7,7 @@
 
 ### Added
 - Added an utility to correctly format prices
+- Added npm scripts
 
 ## [0.6.6proto]
 ### Changed

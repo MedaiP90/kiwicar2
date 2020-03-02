@@ -1,12 +1,15 @@
 {
-  "name": "KiwiCar2",
-  "version": "0.0.1",
-  "author": "Ionic Framework",
-  "homepage": "https://ionicframework.com/",
+  "name": "@coma_softwares/kiwi_car_2",
+  "version": "0.6.11",
+  "author": "CoMa Softwares",
+  "homepage": "https://github.com/MedaiP90/kiwicar2",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build",
+    "build:dev": "ng build",
+    "build:prod": "ng build --prod",
+    "sync:dev": "npm run build:dev && npx cap sync",
+    "sync:prod": "npm run build:prod && npx cap sync",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"

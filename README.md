@@ -15,14 +15,14 @@ Per poter lavorare al progetto occore installare alcune dipendenze:
 
 Preventivamente è sempre consigliato eseguire il comando `npm install` per soddisfare eventuali dipendenze aggiunte in fase di sviluppo.
 
-Fare la build del progetto:
+Fare la build del progetto e sincronizzarlo:
+- modalità _development_
 ```bash
-ionic build
+npm run sync:dev
 ```
-
-Sincronizzare i dati con il progetto android:
+- modalità _production_
 ```bash
-npx cap sync android
+npm run sync:prod
 ```
 
 Aprire _Android Studio_ e proseguire dall'IDE:
