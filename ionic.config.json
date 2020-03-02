@@ -1,7 +1,6 @@
 {
   "name": "KiwiCar2",
   "integrations": {
-    "cordova": {},
     "capacitor": {}
   },
   "type": "angular"
